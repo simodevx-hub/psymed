@@ -4,167 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thérapie de Couple Casablanca - Psymaroc</title>
+    <title>Thérapie de Couple Casablanca - TherapieMarocOnline</title>
     <meta name="description"
         content="Thérapie de couple à Casablanca pour résoudre les conflits, rétablir la communication ou surmonter une infidélité. Psychologues experts.">
 
-    <!-- Fonts -->
+    <!-- CSS & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
 
-    <!-- Schema.org JSON-LD -->
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MedicalWebPage",
       "name": "Thérapie de Couple Système",
       "description": "Thérapie conjugale et familiale pour couples en crise ou désirant améliorer leur communication.",
-      "provider": {
-        "@type": "MedicalOrganization",
-        "name": "Psymaroc"
-      },
+      "provider": { "@type": "MedicalOrganization", "name": "TherapieMarocOnline" },
       "medicalAudience": "Couples"
     }
     </script>
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="../index.html" class="logo">Psymaroc.</a>
-            <nav class="main-nav">
-                <ul>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">TherapieMarocOnline.</a>
+            <nav>
+                <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
                     <li><a href="index.html" class="active">Services</a></li>
                     <li><a href="../equipe.html">Équipe</a></li>
                     <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="../contact.html">Contact</a></li>
-                    <li><a href="../rdv.html" class="btn btn-primary">Prendre RDV</a></li>
                 </ul>
             </nav>
-            <div class="burger-menu" id="burgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="../rdv.html" class="btn btn-primary">Prendre RDV</a>
         </div>
     </header>
 
     <main>
-        <section class="service-hero">
-            <img src="../img/couple.jpg" alt="Thérapie de couple">
-            <div class="service-hero-overlay"></div>
-            <div class="service-hero-content">
+        <!-- Hero -->
+        <section class="hero" style="min-height: 50vh;">
+            <picture>
+                <source srcset="../img/couple.webp" type="image/webp">
+                <img src="../img/couple.jpg" alt="Thérapie de couple" class="hero-bg" style="object-position: center;">
+            </picture>
+            <div class="container hero-content">
                 <h1>Thérapie de Couple</h1>
                 <p>Retrouver le chemin du dialogue et transformer la crise en opportunité.</p>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container" style="max-width: 800px;">
-                <div style="margin-bottom: 3rem;">
+        <!-- Content -->
+        <section class="container" style="padding: var(--spacing-lg) 0;">
+            <div style="max-width: 800px; margin: 0 auto;">
+
+                <div class="mb-lg">
                     <h2>Pourquoi entamer une thérapie de couple ?</h2>
-                    <p>Tous les couples traversent des turbulences. La thérapie n'est pas là pour désigner un coupable,
-                        mais pour comprendre la mécanique de la relation. C'est un espace tiers, neutre, où chacun peut
-                        exprimer ses besoins sans peur du jugement.</p>
-                    <p>Nous intervenons pour :</p>
-                    <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 1rem; line-height: 1.8;">
-                        <li><strong>Problèmes de communication :</strong> Incompréhensions répétées, silences lourds.
-                        </li>
+                    <p>La thérapie n'est pas là pour désigner un coupable, mais pour comprendre la mécanique de la
+                        relation. C'est un espace neutre où chacun peut exprimer ses besoins.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Problèmes de communication :</strong> Incompréhensions répétées.</li>
                         <li><strong>Crises majeures :</strong> Infidélité, jalousie excessive, perte de confiance.</li>
-                        <li><strong>Transitions de vie :</strong> Arrivée d'un enfant, départ des enfants, retraite.
-                        </li>
+                        <li><strong>Transitions de vie :</strong> Arrivée/départ d'un enfant, retraite.</li>
                         <li><strong>Sexualité :</strong> Perte de désir, frustrations.</li>
                     </ul>
                 </div>
 
-                <!-- Methodology Box -->
-                <div
-                    style="margin-bottom: 3rem; background-color: #fff7ed; padding: 2rem; border-radius: var(--radius-md); border-left: 5px solid var(--color-accent);">
-                    <h3 style="margin-bottom: 1rem;">L'Approche Systémique</h3>
+                <div class="card mb-lg"
+                    style="background-color: #fff7ed; border-left: 5px solid var(--color-secondary);">
+                    <h3>L'Approche Systémique</h3>
                     <p>Nous considérons le couple comme un "système". Si un rouage grippe, c'est l'ensemble qui souffre.
-                        Le thérapeute n'est pas un arbitre, mais un mécanicien de la relation. Il aide à identifier les
-                        schémas répétitifs pour en créer de nouveaux, plus sains.</p>
+                        Le thérapeute aide à identifier les schémas répétitifs pour en créer de nouveaux.</p>
                 </div>
 
-                <!-- Process -->
-                <div style="margin-bottom: 3rem;">
+                <div class="mb-lg">
                     <h2>Le déroulement des séances</h2>
-                    <p>Les séances durent généralement <strong>1h15</strong> (plus long qu'une séance individuelle) pour
-                        laisser le temps à chacun de s'exprimer.</p>
-                    <div class="features-grid" style="text-align: left; margin-top: 2rem;">
-                        <div class="feature-item">
-                            <h4 style="color: var(--color-accent);">Écoute Équitable</h4>
-                            <p>Le thérapeute veille à ce que le temps de parole soit partagé et respecté.</p>
+                    <p>Les séances durent généralement <strong>1h15</strong> pour laisser le temps à chacun de
+                        s'exprimer.</p>
+                    <div class="grid grid-3" style="text-align: left; margin-top: 1.5rem;">
+                        <div>
+                            <h4 style="color: var(--color-secondary);">Écoute Équitable</h4>
+                            <p class="text-sm">Le thérapeute veille à ce que le temps de parole soit partagé.</p>
                         </div>
-                        <div class="feature-item">
-                            <h4 style="color: var(--color-accent);">Exercices Pratiques</h4>
-                            <p>Des outils concrets à mettre en place à la maison pour renouer le lien.</p>
+                        <div>
+                            <h4 style="color: var(--color-secondary);">Exercices Pratiques</h4>
+                            <p class="text-sm">Des outils concrets à mettre en place à la maison.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- FAQ Schema -->
-                <div style="margin-bottom: 4rem;">
+                <div class="mb-lg">
                     <h2>Questions Fréquentes</h2>
-
-                    <div style="margin-top: 1.5rem;">
-                        <details style="padding: 1rem; border-bottom: 1px solid #e5e7eb; cursor: pointer;">
-                            <summary style="font-weight: 600; color: var(--color-primary);">Faut-il venir à deux ?
-                            </summary>
-                            <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--color-text-light);">
-                                Idéalement oui. Cependant, il est parfois possible de commencer seul pour faire le point
-                                avant de proposer au conjoint de rejoindre le processus.</p>
-                        </details>
-
-                        <details style="padding: 1rem; border-bottom: 1px solid #e5e7eb; cursor: pointer;">
-                            <summary style="font-weight: 600; color: var(--color-primary);">Est-ce pour se séparer ou
-                                rester ensemble ?</summary>
-                            <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--color-text-light);">Les deux
-                                issues sont possibles. La thérapie aide à clarifier ce que chacun veut vraiment, que ce
-                                soit un nouveau départ ou une séparation apaisée.</p>
-                        </details>
-                    </div>
+                    <details style="padding: 1rem; border-bottom: 1px solid #eee;">
+                        <summary style="font-weight: bold; cursor: pointer;">Faut-il venir à deux ?</summary>
+                        <p style="margin-top: 0.5rem;">Idéalement oui. Mais il est possible de commencer seul.</p>
+                    </details>
+                    <details style="padding: 1rem; border-bottom: 1px solid #eee;">
+                        <summary style="font-weight: bold; cursor: pointer;">Est-ce pour se séparer ou rester ensemble ?
+                        </summary>
+                        <p style="margin-top: 0.5rem;">Les deux issues sont possibles. La thérapie aide à clarifier ce
+                            que chacun veut vraiment.</p>
+                    </details>
                 </div>
 
-                <!-- CTA -->
-                <div
-                    style="text-align: center; background-color: var(--color-bg-alt); padding: 3rem; border-radius: var(--radius-lg);">
-                    <h3 style="margin-bottom: 1rem;">Prenez soin de votre relation</h3>
-                    <p style="margin-bottom: 2rem;">Il n'est jamais trop tard pour rétablir le dialogue.</p>
+                <div class="text-center card">
+                    <h3>Prenez soin de votre relation</h3>
+                    <p class="mb-lg">Il n'est jamais trop tard pour rétablir le dialogue.</p>
                     <a href="../rdv.html" class="btn btn-primary">Prendre RDV en Couple</a>
                 </div>
+
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Psymaroc.</h3>
-                    <p>Votre partenaire santé mentale à Casablanca.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Légal</h3>
-                    <ul class="footer-links">
-                        <li><a href="../legal/mentions-legales.html">Mentions Légales</a></li>
-                        <li><a href="../legal/confidentialite.html">Confidentialité</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Psymaroc.</p>
-            </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 TherapieMarocOnline. Tous droits réservés.</p>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+
 </body>
 
 </html>

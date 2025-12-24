@@ -4,352 +4,671 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psymaroc - Psychologue à Casablanca - Thérapie et Bien-être</title>
+    <title>Psychologue Casablanca - Thérapie TCC & Bien-être | TherapieMarocOnline</title>
+    <meta name="description"
+        content="Cabinet de psychologie à Casablanca (Gauthier). Thérapies TCC, gestion du stress et soutien émotionnel. Prenez RDV en ligne pour une consultation bienveillante.">
 
-    <!-- Fonts -->
+    <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Schema.org JSON-LD -->
+    <!-- JSON-LD: Local Business & Medical -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "PsychiatricPlace",
-      "name": "Psymaroc",
-      "image": "https://psymaroc.ma/img/hero-bg.jpg",
-      "@id": "https://psymaroc.ma",
-      "url": "https://psymaroc.ma",
-      "telephone": "+212663056341",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Quartier Gauthier",
-        "addressLocality": "Casablanca",
-        "postalCode": "20000",
-        "addressCountry": "MA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 33.5898,
-        "longitude": -7.6038
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/psymaroc",
-        "https://www.instagram.com/psymaroc"
-      ],
-      "priceRange": "$$"
+      "@graph": [
+        {
+            "@type": "MedicalBusiness",
+            "name": "TherapieMarocOnline",
+            "description": "Service de psychologie en ligne au Maroc : thérapie psychologique, gestion de l’anxiété, du stress, de la dépression. Séances confidentielles par WhatsApp, téléphone ou vidéo.",
+            "url": "https://therapiemaroconline.com/",
+            "logo": "https://therapiemaroconline.com/img/logo.png",
+            "image": "https://therapiemaroconline.com/img/hero-bg.webp",
+            "telephone": "+212663056341",
+            "email": "contact@therapiemaroconline.com",
+            "priceRange": "250 MAD",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 Boulevard d'Anfa, Quartier Gauthier",
+                "addressLocality": "Casablanca",
+                "addressRegion": "Casablanca-Settat",
+                "postalCode": "20000",
+                "addressCountry": "MA"
+            },
+            "areaServed": [
+                "Morocco",
+                "Casablanca",
+                "Rabat",
+                "Marrakech",
+                "Fes",
+                "Agadir"
+            ],
+            "availableService": [
+                {
+                    "@type": "MedicalTherapy",
+                    "name": "Thérapie Cognitivo-Comportementale (TCC)",
+                    "description": "Interventions basées sur des preuves scientifiques pour traiter l’anxiété, le stress et les troubles émotionnels.",
+                    "healthCondition": [
+                        {
+                            "@type": "MedicalCondition",
+                            "name": "Anxiété"
+                        },
+                        {
+                            "@type": "MedicalCondition",
+                            "name": "Stress"
+                        },
+                        {
+                            "@type": "MedicalCondition",
+                            "name": "Dépression"
+                        }
+                    ],
+                    "serviceType": "Psychologie en ligne"
+                }
+            ],
+            "offers": {
+                "@type": "Offer",
+                "price": "250",
+                "priceCurrency": "MAD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://therapiemaroconline.com/rdv.html"
+            },
+            "founder": {
+                "@type": "Person",
+                "name": "Mohamed Bouchemmama",
+                "jobTitle": "Psychologue Clinicien",
+                "description": "Spécialiste en thérapie cognitivo-comportementale et psychologie en ligne.",
+                "knowsAbout": [
+                    "Thérapie cognitivo-comportementale",
+                    "Gestion du stress",
+                    "Gestion de l’anxiété",
+                    "Psychologie en ligne"
+                ],
+                "hasCredential": "Licence en Psychologie Clinique"
+            },
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "Customer Support",
+                    "telephone": "+212663056341",
+                    "email": "contact@therapiemaroconline.com",
+                    "availableLanguage": "fr",
+                    "areaServed": "MA"
+                },
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "WhatsApp",
+                    "url": "https://wa.me/212663056341",
+                    "availableLanguage": "fr",
+                    "areaServed": "MA"
+                }
+            ]
+        }
+      ]
     }
     </script>
-    <!-- Expert Audit: Favicon (Emoji for simplicity) -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
+    <!-- JSON-LD: FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Mon échange est-il confidentiel ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolument. En tant que psychologues cliniciens agréés, nous sommes tenus au secret professionnel strict. Rien de ce qui est dit en séance ne sort du cabinet."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Comment se déroule la première séance ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "C'est un moment d'échange pour faire connaissance. Vous expliquez ce qui vous amène, et nous définissons ensemble si nous sommes la bonne personne pour vous aider."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Acceptez-vous les consultations en ligne ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, nous proposons des téléconsultations vidéo sécurisées pour les patients qui ne peuvent pas se déplacer au cabinet à Casablanca."
+        }
+      }]
+    }
+    </script>
+    <style>
+        /* Custom Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Premium Hover Effects */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Hero Animation */
+        .hero-content h1,
+        .hero-content p,
+        .hero-content .btn {
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-content p {
+            animation-delay: 0.2s;
+        }
+
+        .hero-content .div {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Adjustments for Stats */
+        @media (max-width: 768px) {
+            .stat-item {
+                border: none !important;
+                margin-bottom: 2rem;
+            }
+
+            .stat-item:last-child {
+                margin-bottom: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="site-header">
-        <div class="container">
-            <a href="index.html" class="logo">Psymaroc.</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Accueil</a></li>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="/" class="logo">TherapieMarocOnline.</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="services/index.html">Services</a></li>
                     <li><a href="equipe.html">Équipe</a></li>
                     <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="rdv.html" class="btn btn-primary">Prendre RDV</a></li>
                 </ul>
             </nav>
-            <div class="burger-menu" id="burgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div style="display: flex; gap: 0.5rem; align-items: center; margin-right: 1rem;">
+                <span style="font-weight: bold; color: var(--color-primary);">FR</span>
+                <span style="opacity: 0.3;">|</span>
+                <a href="index_ar.html" class="logo"
+                    style="color: #666; text-decoration: none; font-weight: 500; font-family: 'Noto Kufi Arabic', sans-serif;">AR
+                    (العربية)</a>
             </div>
+            <a href="rdv.html" class="btn btn-primary">Prendre RDV</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section class="hero">
+            <picture>
+                <source srcset="img/hero-bg.webp" type="image/webp">
+                <img src="img/hero-bg.jpg" alt="Cabinet de psychologie apaisant" class="hero-bg" fetchpriority="high">
+            </picture>
+
             <div class="container hero-content">
                 <h1>Retrouvez votre calme, sans attendre.</h1>
                 <p>Thérapie moderne, bienveillante et accessible à Casablanca. Prenez soin de votre santé mentale avec
                     des professionnels à votre écoute.</p>
-                <div style="margin-top: 2rem;">
-                    <a href="rdv.html" class="btn btn-primary" style="margin-right: 1rem;">Prendre RDV en ligne</a>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="rdv.html" class="btn btn-primary">Prendre RDV en ligne</a>
                     <a href="equipe.html" class="btn btn-outline" style="color: white; border-color: white;">Découvrir
                         l'équipe</a>
                 </div>
             </div>
-            <!-- Background Decoration (Optional) -->
-            <div
-                style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(rgba(45, 74, 62, 0.9), rgba(45, 74, 62, 0.7)), url('img/hero-bg.jpg') center/cover; z-index: 1;">
+        </section>
+
+        <!-- Stats Section (Social Proof) -->
+        <section class="container" style="margin-top: -4rem; position: relative; z-index: 10; margin-bottom: 3rem;">
+            <div class="grid grid-3 stats-card"
+                style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); text-align: center; align-items: center;">
+                <div class="stat-item">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--color-primary); line-height: 1;">96%
+                    </div>
+                    <div
+                        style="color: #666; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
+                        Taux de satisfaction</div>
+                </div>
+                <div class="stat-item" style="border-left: 1px solid #eee; border-right: 1px solid #eee;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--color-primary); line-height: 1;">500+
+                    </div>
+                    <div
+                        style="color: #666; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
+                        Clients accompagnés</div>
+                </div>
+                <div class="stat-item">
+                    <div style="font-size: 3rem; font-weight: 800; color: #FFD700; line-height: 1;">5⭐</div>
+                    <div
+                        style="color: #666; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
+                        Note moyenne</div>
+                </div>
             </div>
         </section>
 
-        <!-- Value Proposition -->
-        <section class="section features-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Pourquoi Psymaroc ?</h2>
-                    <p class="subtitle">Une approche différente de la psychologie traditionnelle.</p>
+        <!-- SECTION 1: Situations (Identification) -->
+        <section class="container" style="padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg);">
+            <div class="text-center mb-lg">
+                <h2>Dans quelles situations pouvons-nous vous aider ?</h2>
+                <p>Vous n'avez pas besoin d'avoir un "trouble" pour consulter. Nous vous accompagnons dans les moments
+                    de doute.</p>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Stress &
+                        Surcharge mentale</h3>
+                    <p class="text-sm">Sentiment d'être débordé(e), irritabilité, difficultés à déconnecter du travail
+                        ou du quotidien.</p>
+                </article>
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Difficultés
+                        relationnelles</h3>
+                    <p class="text-sm">Conflits répétés, incompréhensions ou sentiment d'isolement au sein de vos
+                        relations.</p>
+                </article>
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Problèmes de
+                        couple</h3>
+                    <p class="text-sm">Manque de communication, jalousie, infidélité ou questionnements sur l'avenir de
+                        la relation.</p>
+                </article>
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Manque de
+                        confiance en soi</h3>
+                    <p class="text-sm">Syndrome de l'imposteur, doute permanent, difficulté à s'affirmer ou à dire non.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Fatigue
+                        émotionnelle</h3>
+                    <p class="text-sm">Perte de motivation, tristesse inexpliquée, sentiment de vide ou d'épuisement.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Transitions de
+                        vie</h3>
+                    <p class="text-sm">Divorce, expatriation, changement de carrière, deuil ou arrivée d'un enfant.</p>
+                </article>
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Blocages & Perte
+                        de sens</h3>
+                    <p class="text-sm">Impression de faire du surplace, questionnements existentiels, besoin de y voir
+                        plus clair.</p>
+                </article>
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Gestion des
+                        émotions</h3>
+                    <p class="text-sm">Colère, peurs irrationnelles, hypersensibilité ou difficulté à gérer ses
+                        réactions.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features (Avantages) -->
+        <section class="container" style="padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg);">
+            <div class="text-center mb-lg">
+                <h2>Pourquoi TherapieMarocOnline ?</h2>
+                <p>Une approche différente de la psychologie traditionnelle.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <article class="card text-center">
+                    <span class="card-icon">🌱</span>
+                    <h3>Approche Humaine</h3>
+                    <p>Loin de la froideur clinique, nous privilégions un échange chaleureux et empathique.</p>
+                </article>
+                <article class="card text-center">
+                    <span class="card-icon">📅</span>
+                    <h3>Simplicité Totale</h3>
+                    <p>Réservez votre créneau en 2 clics. Pas d'attente, pas d'appels inutiles.</p>
+                </article>
+                <article class="card text-center">
+                    <span class="card-icon">🔒</span>
+                    <h3>Confidentialité</h3>
+                    <p>Vos échanges sont strictement confidentiels et protégés par le secret professionnel.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Expert Bio (E-E-A-T) -->
+        <section class="container" style="padding-bottom: var(--spacing-lg);">
+            <div class="card"
+                style="display: flex; gap: 2rem; align-items: center; max-width: 900px; margin: 0 auto; text-align: left;">
+                <div style="flex: 0 0 150px;">
+                    <img src="img/psy1.webp" alt="Mohamed Bouchemmama Psychologue"
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--color-bg);">
                 </div>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="service-icon">🌱</div>
-                        <h3>Approche Humaine</h3>
-                        <p>Loin de la froideur clinique, nous privilégions un échange chaleureux et empathique.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="service-icon">📅</div>
-                        <h3>Simplicité Totale</h3>
-                        <p>Réservez votre créneau en 2 clics. Pas d'attente, pas d'appels inutiles.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="service-icon">🔒</div>
-                        <h3>Confidentialité</h3>
-                        <p>Vos échanges sont strictement confidentiels et protégés par le secret professionnel.</p>
-                    </div>
+                <div>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Rencontrez votre Expert</h2>
+                    <h3 style="font-size: 1.25rem; color: var(--color-secondary); margin-bottom: 1rem;">Mohamed
+                        Bouchemmama, Psychologue Clinicien</h3>
+                    <p style="margin-bottom: 1rem;">Spécialisé en Thérapies Cognitivo-Comportementales (TCC) et
+                        thérapies brèves. Avec plus de 3 ans d'expérience clinique, j'accompagne mes patients vers un
+                        mieux-être durable avec une approche scientifique et bienveillante, adaptée à notre culture.</p>
+                    <a href="equipe.html" class="btn btn-outline">En savoir plus sur mon parcours</a>
                 </div>
             </div>
         </section>
 
         <!-- Services Preview -->
-        <section class="section" style="background-color: transparent;"> <!-- Transparent to show noise texture -->
+        <section style="background-color: var(--color-white); padding: var(--spacing-lg) 0;">
             <div class="container">
-                <div class="section-header">
+                <div class="text-center mb-lg">
                     <h2>Nos Accompagnements</h2>
-                    <p class="subtitle">Des solutions adaptées à chaque étape de la vie.</p>
+                    <p>Des solutions adaptées à chaque étape de la vie.</p>
                 </div>
-                <div class="services-grid">
-                    <a href="services/therapie-adulte.html" class="service-card">
-                        <div class="service-icon">👤</div>
-                        <h3>Thérapie Adulte</h3>
-                        <p>Anxiété, dépression, burnout... Trouvez un espace pour déposer vos maux et avancer.</p>
-                        <span
-                            style="color: var(--color-accent); font-weight: 500; font-size: 0.9rem; margin-top: 1rem; display: block;">En
-                            savoir plus →</span>
+
+                <div class="grid grid-3">
+                    <a href="services/therapie-adulte.html" class="card">
+                        <span class="card-icon">👤</span>
+                        <h3>Thérapie Individuelle</h3>
+                        <p>Pour adultes. Stress, anxiété, dépression, développement personnel.</p>
+                        <strong style="color: var(--color-secondary);">En savoir plus →</strong>
                     </a>
-                    <a href="services/therapie-enfant-ado.html" class="service-card">
-                        <div class="service-icon">🧸</div>
-                        <h3>Enfant & Adolescent</h3>
-                        <p>Accompagner les plus jeunes à travers leurs difficultés scolaires, émotionnelles ou
-                            relationnelles.</p>
-                        <span
-                            style="color: var(--color-accent); font-weight: 500; font-size: 0.9rem; margin-top: 1rem; display: block;">En
-                            savoir plus →</span>
-                    </a>
-                    <a href="services/therapie-couple.html" class="service-card">
-                        <div class="service-icon">🤝</div>
+                    <a href="services/therapie-couple.html" class="card">
+                        <span class="card-icon">🤝</span>
                         <h3>Thérapie de Couple</h3>
-                        <p>Rétablir le dialogue et surmonter les crises pour construire une relation plus saine.</p>
-                        <span
-                            style="color: var(--color-accent); font-weight: 500; font-size: 0.9rem; margin-top: 1rem; display: block;">En
-                            savoir plus →</span>
+                        <p>Restaurer le dialogue, surmonter une crise ou se séparer sereinement.</p>
+                        <strong style="color: var(--color-secondary);">En savoir plus →</strong>
+                    </a>
+                    <a href="services/therapie-enfant-ado.html" class="card">
+                        <span class="card-icon">🧸</span>
+                        <h3>Enfant & Adolescent</h3>
+                        <p>Troubles scolaires, émotionnels ou relationnels. Guidance parentale.</p>
+                        <strong style="color: var(--color-secondary);">En savoir plus →</strong>
+                    </a>
+                    <a href="services/expatries-mre.html" class="card">
+                        <span class="card-icon">🌍</span>
+                        <h3>Expatriés & MRE</h3>
+                        <p>Soutien psychologique adapté aux défis de l'expatriation et du retour.</p>
+                        <strong style="color: var(--color-secondary);">Prendre RDV →</strong>
+                    </a>
+                    <a href="services/accompagnement-familial.html" class="card">
+                        <span class="card-icon">👨‍👩‍👧‍👦</span>
+                        <h3>Accompagnement Familial</h3>
+                        <p>Apaiser les tensions et rétablir l'harmonie au sein du foyer.</p>
+                        <strong style="color: var(--color-secondary);">Nous contacter →</strong>
+                    </a>
+                    <a href="services/coaching-vie.html" class="card">
+                        <span class="card-icon">🔄</span>
+                        <h3>Coaching de Vie</h3>
+                        <p>Pour passer un cap, prendre une décision ou réussir une transition.</p>
+                        <strong style="color: var(--color-secondary);">Découvrir →</strong>
                     </a>
                 </div>
-                <div style="text-align: center; margin-top: 3rem;">
+
+                <div class="text-center" style="margin-top: var(--spacing-md);">
                     <a href="services/index.html" class="btn btn-outline">Voir toutes nos expertises</a>
                 </div>
             </div>
         </section>
 
-        <!-- Expert Audit: Local SEO Section (Notre Cabinet) -->
-        <section class="section" style="background-color: var(--color-white);">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Notre Cabinet à Casablanca</h2>
-                    <p class="subtitle">Un havre de paix au cœur du quartier Gauthier.</p>
+        <!-- SECTION 2: Processus (Réassurance) -->
+        <section class="container" style="padding-bottom: var(--spacing-lg);">
+            <div class="text-center mb-lg">
+                <h2>Comment se déroule une thérapie en ligne ?</h2>
+                <p>Un processus simple, sécurisé et bienveillant, étape par étape.</p>
+            </div>
+            <div class="grid grid-3">
+                <div style="text-align: left;">
+                    <div style="font-size: 3rem; font-weight: bold; color: #eee; line-height: 1;">01</div>
+                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">Avant la séance</h3>
+                    <p class="text-sm">Vous choisissez votre créneau en ligne. Vous recevez un lien sécurisé par
+                        email/WhatsApp. Installez-vous dans un endroit calme.</p>
                 </div>
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start;">
-                    <div class="info-card" style="text-align: left;">
-                        <h3>Nous trouver</h3>
-                        <p style="margin-bottom: 1rem;"><strong>Adresse :</strong> 123 Boulevard d'Anfa, Quartier
-                            Gauthier, 20000 Casablanca.</p>
-                        <p style="margin-bottom: 1rem;"><strong>Accès :</strong> À 5min du Twin Center. Parking
-                            disponible en sous-sol.</p>
-                        <p><strong>Horaires :</strong><br>
-                            Lundi - Vendredi : 09h00 - 20h00<br>
-                            Samedi : 09h00 - 13h00</p>
-                        <div style="margin-top: 1.5rem;">
-                            <a href="https://maps.google.com" target="_blank" class="btn btn-outline"
-                                style="font-size: 0.9rem;">Itinéraire via Google Maps</a>
-                        </div>
+                <div style="text-align: left;">
+                    <div style="font-size: 3rem; font-weight: bold; color: #eee; line-height: 1;">02</div>
+                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">Pendant la séance</h3>
+                    <p class="text-sm">L'échange dure 45 à 60 min. La vidéo permet de créer un lien fort. L'écoute est
+                        active, sans jugement, et totalement confidentielle.</p>
+                </div>
+                <div style="text-align: left;">
+                    <div style="font-size: 3rem; font-weight: bold; color: #eee; line-height: 1;">03</div>
+                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">Après la séance</h3>
+                    <p class="text-sm">Vous repartez avec des pistes de réflexion ou des outils concrets. Le paiement se
+                        fait simplement par virement ou Wafacash.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Confiance & Éthique (Trust Block) -->
+        <section
+            style="background-color: #F9F7F2; padding: var(--spacing-lg) 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <div>
+                        <h2>Confidentialité, Éthique et Sécurité</h2>
+                        <p style="margin-bottom: 1.5rem;">Votre confiance est notre priorité absolue. Nous exerçons dans
+                            un cadre déontologique strict.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                                <span style="color: var(--color-secondary);">✔</span>
+                                <div><strong>Secret Professionnel :</strong> Tout ce qui est dit reste strictement
+                                    confidentiel.</div>
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                                <span style="color: var(--color-secondary);">✔</span>
+                                <div><strong>Qualifications Vérifiées :</strong> Psychologues diplômés d'État et
+                                    inscrits aux registres officiels.</div>
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+                                <span style="color: var(--color-secondary);">✔</span>
+                                <div><strong>Données Protégées :</strong> Nous ne partageons jamais vos informations
+                                    personnelles.</div>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- Map Placeholder (Simulated) -->
                     <div
-                        style="background-color: #eee; border-radius: var(--radius-md); height: 300px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <img src="img/map-placeholder.jpg" alt="Plan d'accès Psymaroc"
-                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
-                        <span
-                            style="position: absolute; font-weight: 700; color: #555; background: white; padding: 0.5rem 1rem; border-radius: 4px; box-shadow: var(--shadow-soft);">📍
-                            Carte Google Maps</span>
+                        style="background: white; padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Ce que nous ne faisons pas</h3>
+                        <p class="text-sm" style="margin-bottom: 0.5rem;">❌ Nous ne délivrons pas de médicaments (rôle
+                            du psychiatre).</p>
+                        <p class="text-sm" style="margin-bottom: 0.5rem;">❌ Nous ne jugeons jamais vos choix ou votre
+                            mode de vie.</p>
+                        <p class="text-sm">❌ Nous ne sommes pas un service d'urgence (SAMU : 15).</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="section testimonials-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Ce qu'ils disent de nous</h2>
+        <!-- SECTION 4: Témoignages (Social Proof) -->
+        <section class="container" style="padding: var(--spacing-lg) 0;">
+            <div class="text-center mb-lg">
+                <h2>Ce que disent nos patients</h2>
+                <p>Retours d'expérience anonymisés.</p>
+            </div>
+            <div class="grid grid-3">
+                <article class="card" style="font-style: italic;">
+                    <p class="mb-lg">"J'étais sceptique sur la thérapie en ligne, mais je me suis senti tout de suite à
+                        l'aise avec M. Bouchemmama. Une écoute rare."</p>
+                    <strong style="display: block; font-style: normal;">— Karim, 34 ans</strong>
+                    <span class="text-sm" style="opacity: 0.7; font-style: normal;">Thérapie individuelle</span>
+                </article>
+                <article class="card" style="font-style: italic;">
+                    <p class="mb-lg">"Merci pour votre bienveillance. J'ai pu traverser mon divorce avec beaucoup plus
+                        de sérénité grâce à nos échanges."</p>
+                    <strong style="display: block; font-style: normal;">— Layla, 29 ans</strong>
+                    <span class="text-sm" style="opacity: 0.7; font-style: normal;">Transition de vie</span>
+                </article>
+                <article class="card" style="font-style: italic;">
+                    <p class="mb-lg">"Un espace où je peux enfin être moi-même sans peur d'être jugé. Je recommande
+                        vivement."</p>
+                    <strong style="display: block; font-style: normal;">— Mehdi, 41 ans</strong>
+                    <span class="text-sm" style="opacity: 0.7; font-style: normal;">Gestion du stress</span>
+                </article>
+            </div>
+            <div class="text-center mt-lg">
+                <small style="opacity: 0.6;">* Pour préserver la confidentialité, les prénoms ont été modifiés.</small>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="container" style="padding: var(--spacing-lg) 0;">
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); align-items: center;">
+                <div>
+                    <h2>Notre Cabinet à Casablanca</h2>
+                    <p class="mb-lg">Un havre de paix au cœur du quartier Gauthier.</p>
+
+                    <div class="card">
+                        <h3>Nous trouver</h3>
+                        <p><strong>Adresse :</strong> 123 Boulevard d'Anfa, Quartier Gauthier, 20000 Casablanca.</p>
+                        <p><strong>Accès :</strong> À 5min du Twin Center. Parking disponible.</p>
+                        <br>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-outline">Itinéraire Google
+                            Maps</a>
+                    </div>
                 </div>
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md);">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"J'ai longtemps hésité avant de consulter. L'accueil chez Psymaroc
-                            m'a tout de suite mis en confiance. Je me sens enfin écouté."</p>
-                        <p class="testimonial-author">— Karim B.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"La prise de rendez-vous est simplissime, et ma thérapeute est
-                            formidable. Un vrai changement dans ma vie."</p>
-                        <p class="testimonial-author">— Sarah L.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Merci pour votre bienveillance. Je recommande vivement ce cabinet à
-                            tous ceux qui traversent une passe difficile."</p>
-                        <p class="testimonial-author">— Mohamed T.</p>
-                    </div>
+                <div style="background: #eee; height: 400px; border-radius: var(--radius);">
+                    <img src="img/lieu.webp" alt="Intérieur du cabinet TherapieMarocOnline"
+                        style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius);" loading="lazy">
                 </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Schema.org ready) -->
+        <section class="container" style="padding-bottom: var(--spacing-lg);">
+            <div class="text-center mb-lg">
+                <h2>Questions Fréquentes</h2>
+                <p>Tout ce que vous devez savoir avant votre première séance.</p>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <details
+                    style="background: white; padding: 1rem; margin-bottom: 1rem; border-radius: var(--radius); border: 1px solid #eee;">
+                    <summary
+                        style="font-weight: bold; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        Mon échange est-il confidentiel ? <span style="color: var(--color-secondary);">+</span>
+                    </summary>
+                    <p style="margin-top: 1rem; color: #555;">Absolument. En tant que psychologues cliniciens agréés,
+                        nous sommes tenus au secret professionnel strict. Rien de ce qui est dit en séance ne sort du
+                        cabinet.</p>
+                </details>
+                <details
+                    style="background: white; padding: 1rem; margin-bottom: 1rem; border-radius: var(--radius); border: 1px solid #eee;">
+                    <summary
+                        style="font-weight: bold; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        Comment se déroule la première séance ? <span style="color: var(--color-secondary);">+</span>
+                    </summary>
+                    <p style="margin-top: 1rem; color: #555;">C'est un moment d'échange pour faire connaissance. Vous
+                        expliquez ce qui vous amène, et nous définissons ensemble si nous sommes la bonne personne pour
+                        vous aider. Aucune pression.</p>
+                </details>
+                <details
+                    style="background: white; padding: 1rem; margin-bottom: 1rem; border-radius: var(--radius); border: 1px solid #eee;">
+                    <summary
+                        style="font-weight: bold; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        Acceptez-vous les consultations en ligne ? <span style="color: var(--color-secondary);">+</span>
+                    </summary>
+                    <p style="margin-top: 1rem; color: #555;">Oui, nous proposons des téléconsultations vidéo sécurisées
+                        pour les patients qui ne peuvent pas se déplacer au cabinet à Casablanca.</p>
+                </details>
             </div>
         </section>
 
         <!-- CTA Final -->
-        <section class="section" style="background-color: var(--color-primary); color: white; text-align: center;">
+        <section
+            style="background-color: var(--color-primary); color: white; padding: var(--spacing-lg) 0; text-align: center;">
             <div class="container">
-                <h2 style="color: white; margin-bottom: 1rem;">Prêt à avancer ?</h2>
-                <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">La première étape est souvent la plus
-                    difficile. Nous sommes là pour vous accompagner.</p>
-                <a href="rdv.html" class="btn btn-primary"
-                    style="background-color: var(--color-accent); color: white;">Prendre mon premier RDV</a>
+                <h2 style="color: inherit;">Prêt à avancer ?</h2>
+                <p style="margin-bottom: var(--spacing-md); opacity: 0.9;">La première étape est souvent la plus
+                    difficile.</p>
+                <a href="rdv.html" class="btn btn-primary" style="background-color: var(--color-secondary);">Prendre
+                    mon premier RDV</a>
             </div>
         </section>
-        <!-- Deontology & Ethics Section (Compact) -->
-        <section class="section ethics-section">
-            <div class="container">
-                <div class="section-header" style="margin-bottom: 2rem;">
-                    <h2 style="font-size: 1.8rem;">Engagement & Cadre Thérapeutique</h2>
-                    <p class="subtitle" style="font-size: 1rem;">Transparence, éthique et sécurité pour votre parcours
-                        de soin.</p>
-                </div>
-
-                <div class="ethics-grid">
-                    <!-- Col 1: Déontologie -->
-                    <div class="ethics-col">
-                        <h4>Éthique & Secret Professionnel</h4>
-                        <p>Pratique régie par le Code de Déontologie. Le secret professionnel est absolu.</p>
-                        <ul>
-                            <li><strong>Neutralité bienveillante :</strong> Écoute sans jugement.</li>
-                            <li><strong>Respect de la singularité :</strong> Approche sur-mesure.</li>
-                            <li><strong>Autonomie :</strong> Vous restez acteur de votre chemin.</li>
-                            <li><strong>Cadre :</strong> Suivi structuré et régulier.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Col 2: Politique & Transparence -->
-                    <div class="ethics-col">
-                        <h4>Annulation & Transparence</h4>
-                        <p>Préavis de <strong>24h minimum</strong> pour toute annulation. Toute séance non honorée est
-                            due.</p>
-
-                        <h5>Qualifications Vérifiées</h5>
-                        <p>Psychologues cliniciens diplômés d'État (Master 2). Vérification rigoureuse des diplômes
-                            avant référencement. Vous avez le droit de demander leurs attestations.</p>
-                    </div>
-
-                    <!-- Col 3: Urgences & Innovation -->
-                    <div class="ethics-col">
-                        <h4>Innovation & Limites</h4>
-                        <p>Plateforme sécurisée et ressources fiables.</p>
-
-                        <div class="emergency-box">
-                            <strong>⚠️ Urgences Psychiatriques</strong>
-                            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">La téléconsultation ne remplace pas
-                                les urgences.</p>
-                            <div class="emergency-list">
-                                <span>SAMU: 141</span>
-                                <span>Police: 19</span>
-                                <span>Pompiers: 15</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <footer class="site-footer">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Psymaroc.</h3>
-                    <p>Votre partenaire santé mentale à Casablanca. Une approche humaine et moderne de la thérapie.</p>
+            <div class="grid grid-3">
+                <div>
+                    <h3>TherapieMarocOnline.</h3>
+                    <p>Votre partenaire santé mentale à Casablanca.</p>
                 </div>
-                <div class="footer-col">
+                <div>
                     <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="services/therapie-adulte.html">Thérapie Adulte</a></li>
-                        <li><a href="services/therapie-enfant-ado.html">Enfant & Ado</a></li>
-                        <li><a href="services/therapie-couple.html">Thérapie de Couple</a></li>
-                        <li><a href="services/bilans-psychologiques.html">Bilans</a></li>
+                    <ul>
+                        <li><a href="#">Thérapie Adulte</a></li>
+                        <li><a href="#">Enfant & Ado</a></li>
+                        <li><a href="#">Thérapie de Couple</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div>
                     <h3>Contact</h3>
+                    <p>contact@therapiemaroconline.com</p>
                     <p>Casablanca, Maroc</p>
-                    <p>contact@psymaroc.ma</p>
-                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-                        <!-- Social Icons (Expert Audit Fix) -->
-                        <a href="#" aria-label="Facebook" style="color: white;"><svg width="24" height="24"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                            </svg></a>
-                        <a href="#" aria-label="Instagram" style="color: white;"><svg width="24" height="24" fill="none"
-                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg></a>
-                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Psymaroc. Tous droits réservés. | <a href="legal/mentions-legales.html">Mentions
-                        Légales</a> | <a href="legal/confidentialite.html">Confidentialité</a></p>
+            <div class="text-center"
+                style="margin-top: var(--spacing-lg); border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-md);">
+                <small>&copy; 2025 TherapieMarocOnline. Tous droits réservés.</small>
+                <div style="margin-top: 0.5rem;">
+                    <a href="mentions-legales.html"
+                        style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.8rem; margin: 0 5px;">Mentions
+                        Légales</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="faq.html"
+                        style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.8rem; margin: 0 5px;">FAQ</a>
+                </div>
+                <br>
+                <small style="opacity: 0.7; margin-top: 0.5rem; display: block;">Important : Ce site n'est pas un
+                    service d'urgence. En cas de danger immédiat ou de pensées suicidaires, veuillez contacter les
+                    urgences ou vous rendre à l'hôpital le plus proche.</small>
             </div>
         </div>
     </footer>
 
-    <!-- Expert Audit: Sticky Mobile CTA -->
-    <div class="sticky-mobile-cta">
-        <a href="rdv.html" class="btn btn-primary">Prendre RDV</a>
-    </div>
-
-    <script src="js/main.js"></script>
-
+    <!-- Scroll Reveal Script -->
+    <script>
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.card, h2, .grid > div');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('reveal', 'active');
+                }
+            }
+        }
+        // Trigger once on load
+        reveal();
+    </script>
 </body>
 
 </html>

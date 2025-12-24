@@ -4,216 +4,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prendre Rendez-vous - Psymaroc</title>
+    <title>Prendre Rendez-vous - TherapieMarocOnline</title>
+
+    <!-- CSS Shared -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+
+    <!-- FullCalendar -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #fff;
+            color: var(--color-text);
+        }
+
+        .hero-mini {
+            background: var(--color-primary);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Customize FullCalendar events */
+        .fc-event {
+            background-color: var(--color-green) !important;
+            /* Green for available */
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .fc-event:hover {
+            opacity: 0.8;
+        }
+
+        /* Modal for confirm */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Premium Calendar Styles */
+        .fc-theme-standard .fc-list-day-cushion {
+            background-color: transparent !important;
+            padding: 1.5rem 0 0.5rem 0 !important;
+        }
+
+        .fc .fc-list-day-text,
+        .fc .fc-list-day-side-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            text-decoration: none !important;
+        }
+
+        .fc-list-event {
+            background: white !important;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        .fc-list-event:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: var(--color-secondary);
+        }
+
+        .fc-list-event-time {
+            font-weight: 700;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            padding: 1.5rem !important;
+        }
+
+        .fc-list-event-title {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .fc-list-event-graphic {
+            display: none;
+            /* Hide the little dot */
+        }
+
+        .fc-list-table {
+            border-collapse: separate !important;
+            border-spacing: 0 0.5rem !important;
+        }
+
+        .fc-list-table td {
+            border: none !important;
+        }
+    </style>
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="index.html" class="logo">Psymaroc.</a>
-            <nav class="main-nav">
-                <ul>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="logo">TherapieMarocOnline.</a>
+            <nav>
+                <ul class="nav-links">
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="services/index.html">Services</a></li>
                     <li><a href="equipe.html">Équipe</a></li>
-                    <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="rdv.html" class="active btn btn-primary">Prendre RDV</a></li>
                 </ul>
             </nav>
-            <div class="burger-menu" id="burgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </header>
 
     <main>
-        <section class="section">
+        <!-- Hero & Context -->
+        <section class="hero-mini" style="background-color: #f9f7f2; color: var(--color-text); padding: 4rem 1rem;">
             <div class="container">
-                <div class="section-header">
-                    <h1>Réservez votre séance</h1>
-                    <p class="subtitle">Des tarifs adaptés pour un suivi régulier et durable.</p>
-                </div>
+                <h1 class="mb-lg">Commencez votre accompagnement</h1>
 
-                <!-- Pricing Section -->
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <div>
-                            <div class="pricing-title">Séance Découverte</div>
-                            <div class="pricing-amount">250 <span class="pricing-currency">DH</span></div>
-                            <div class="pricing-details">Pour une première consultation ou un besoin ponctuel.</div>
-                        </div>
-                        <a href="#booking-widget" class="btn btn-outline" style="width: 100%;">Choisir</a>
+                <!-- Pricing Grid -->
+                <div class="grid grid-3" style="margin-bottom: 3rem; text-align: left;">
+                    <div class="card" style="border-top: 4px solid var(--color-secondary);">
+                        <h3>Séance Individuelle</h3>
+                        <p class="text-sm" style="color: #666; margin-bottom: 1rem;">Pour consulter ponctuellement.</p>
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">250 DH <small
+                                style="font-size: 1rem; font-weight: normal;">/ séance</small></div>
+                        <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                            <li>✔ 45 - 60 min</li>
+                            <li>✔ Visio sécurisée</li>
+                            <li>✔ Paiement à la séance</li>
+                        </ul>
                     </div>
 
-                    <div class="pricing-card">
-                        <div>
-                            <div class="pricing-title">Pack 2 Séances</div>
-                            <div class="pricing-amount">450 <span class="pricing-currency">DH</span></div>
-                            <div class="pricing-details">Soit 225 DH la séance.<br>Idéal pour débuter.</div>
-                        </div>
-                        <a href="#booking-widget" class="btn btn-outline" style="width: 100%;">Choisir</a>
+                    <div class="card" style="border-top: 4px solid var(--color-primary); background: #fff;">
+                        <span
+                            style="background: var(--color-secondary); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; float: right;">Populaire</span>
+                        <h3>Pack Duo</h3>
+                        <p class="text-sm" style="color: #666; margin-bottom: 1rem;">2 Séances d'accompagnement.</p>
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">450 DH <small
+                                style="font-size: 1rem; font-weight: normal;">/ le pack</small></div>
+                        <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                            <li>✔ Soit 225 DH / séance</li>
+                            <li>✔ Idéal pour commencer</li>
+                            <li>✔ Valable 1 mois</li>
+                        </ul>
                     </div>
 
-                    <div class="pricing-card">
-                        <div>
-                            <div class="pricing-title">Pack 3 Séances</div>
-                            <div class="pricing-amount">650 <span class="pricing-currency">DH</span></div>
-                            <div class="pricing-details">Soit 216 DH la séance.<br>Pour un suivi court.</div>
-                        </div>
-                        <a href="#booking-widget" class="btn btn-outline" style="width: 100%;">Choisir</a>
-                    </div>
-
-                    <div class="pricing-card highlight">
-                        <div>
-                            <div class="pricing-title">Pack 4 Séances</div>
-                            <div class="pricing-amount">800 <span class="pricing-currency">DH</span></div>
-                            <div class="pricing-details">Soit 200 DH la séance.<br>Le meilleur tarif pour un suivi
-                                complet.</div>
-                        </div>
-                        <a href="#booking-widget" class="btn btn-primary" style="width: 100%;">Choisir</a>
+                    <div class="card" style="border-top: 4px solid #333;">
+                        <h3>Pack Suivi</h3>
+                        <p class="text-sm" style="color: #666; margin-bottom: 1rem;">4 Séances pour avancer.</p>
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">800 DH <small
+                                style="font-size: 1rem; font-weight: normal;">/ le pack</small></div>
+                        <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                            <li>✔ Soit 200 DH / séance</li>
+                            <li>✔ Engagement sur la durée</li>
+                            <li>✔ Valable 2 mois</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Booking Widget -->
-                <div id="booking-widget"
-                    style="max-width: 900px; margin: 4rem auto; background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-card); text-align: center; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📅</div>
-                    <h3>Module de Réservation</h3>
-                    <p style="margin-bottom: 2rem;">Veuillez sélectionner votre créneau ci-dessous.</p>
-                    <button class="btn btn-primary">Voir les disponibilités</button>
+                <div class="text-center">
+                    <button id="showCalendarBtn" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                        Voir les disponibilités
+                    </button>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                        Aucun paiement en ligne requis pour réserver.
+                    </p>
                 </div>
 
-                <!-- Contact Section (Duplicated from Contact Page) -->
-                <div class="section-header" style="margin-top: 4rem;">
-                    <h2>Une question avant de réserver ?</h2>
-                    <p class="subtitle">Nous sommes là pour vous répondre.</p>
-                </div>
-
-                <div class="contact-grid">
-                    <!-- Contact Information Card -->
-                    <div class="info-card">
-                        <h3 class="margin-bottom: 1.5rem;">Informations de contact</h3>
-
-                        <!-- WhatsApp -->
-                        <div class="contact-method-item whatsapp">
-                            <div class="contact-icon-box">
-                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M13.581 11.132c-.046-.023-.27-.134-.313-.149-.043-.015-.075-.023-.106.023-.031.046-.121.149-.149.179-.029.03-.058.034-.106.011-.048-.023-.204-.074-.386-.238-.145-.132-.24-.282-.267-.329-.028-.046 0-.07.019-.093.017-.021.046-.054.069-.081.023-.027.031-.046.046-.077.015-.03.008-.058-.004-.081-.011-.023-.106-.254-.144-.346-.039-.09-.078-.078-.106-.081-.027-.003-.058-.003-.09-.003s-.09.008-.137.046c-.047.039-.182.179-.182.436 0 .257.187.506.212.536.025.03.369.561.897.791.123.054.23.087.313.112.153.048.291.04.405.023.125-.019.369-.15.422-.292.053-.142.053-.264.038-.292-.016-.027-.047-.042-.1-.06z M9.999 2C6.868 2 4.313 4.548 4.313 7.658c0 1.084.311 2.089.858 2.946l-1.005 2.786 2.882-.98c.816.484 1.776.765 2.786.765 3.131 0 5.686-2.548 5.686-5.658S13.13 2 9.999 2zm0 10.261c-.874 0-1.7-.231-2.41-.64l-.17-.101-1.79.61.619-1.74-.11-.179c-.458-.744-.708-1.615-.708-2.533 0-2.504 2.05-4.538 4.579-4.538s4.579 2.034 4.579 4.538-2.05 4.538-4.579 4.538z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.2rem;">WhatsApp</h4>
-                                <p style="font-size: 0.9rem; color: #4B5563;">Réponse rapide garantie</p>
-                                <a href="https://wa.me/212663056341?text=Bonjour" target="_blank"
-                                    class="contact-link-btn whatsapp">Démarrer la conversation</a>
-                            </div>
-                        </div>
-
-                        <!-- Email -->
-                        <div class="contact-method-item email">
-                            <div class="contact-icon-box">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.2rem;">Email</h4>
-                                <p style="font-size: 0.9rem; color: #4B5563;">Réponse sous 24h</p>
-                                <a href="mailto:contact@psymaroc.ma" class="contact-link-text">contact@psymaroc.ma</a>
-                            </div>
-                        </div>
-
-                        <!-- Phone -->
-                        <div class="contact-method-item phone">
-                            <div class="contact-icon-box">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.2rem;">Téléphone</h4>
-                                <p style="font-size: 0.9rem; color: #4B5563;">Appel direct</p>
-                                <a href="tel:+212663056341" class="contact-link-text">+212-663056341</a>
-                            </div>
-                        </div>
-
-                        <!-- Working Hours -->
-                        <div style="padding: 1rem; background-color: #F9FAFB; border-radius: 0.5rem; margin-top: 1rem;">
-                            <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Horaires de consultation</h4>
-                            <p style="font-size: 0.9rem; color: #4B5563;">Lundi - Samedi : 14h00 - 20h00</p>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form Card -->
-                    <div class="form-card">
-                        <h3 class="margin-bottom: 1.5rem;">Envoyez-nous un message</h3>
-
-                        <form action="https://formspree.io/f/xkgrogvy" method="POST">
-                            <div class="contact-grid"
-                                style="grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0;">
-                                <div class="form-group">
-                                    <label for="name" class="form-label">Nom complet *</label>
-                                    <input type="text" id="name" name="name" class="form-input" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="form-label">Email *</label>
-                                    <input type="email" id="email" name="email" class="form-input" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Téléphone <span
-                                        style="font-weight: 400; color: #6B7280;">(optionnel)</span></label>
-                                <input type="tel" id="phone" name="phone" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="form-label">Votre message *</label>
-                                <textarea id="message" name="message" rows="4" class="form-input" required
-                                    style="resize: none;"></textarea>
-                            </div>
-                            <button type="submit" class="form-submit-btn">
-                                Envoyer le message
-                            </button>
-                        </form>
+                <!-- Hidden Calendar Section -->
+                <div id="calendarSection"
+                    style="display: none; margin-top: 3rem; border-top: 1px solid #ddd; padding-top: 3rem; opacity: 0; transition: opacity 0.5s ease;">
+                    <h2 class="text-center" style="margin-bottom: 2rem;">Choisissez votre créneau</h2>
+                    <div id="calendar"
+                        style="max-width: 900px; margin: 0 auto; background: white; padding: 1rem; border-radius: 8px; box-shadow: var(--shadow);">
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Psymaroc.</h3>
-                    <p>Votre partenaire santé mentale à Casablanca.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Légal</h3>
-                    <ul class="footer-links">
-                        <li><a href="legal/mentions-legales.html">Mentions Légales</a></li>
-                        <li><a href="legal/confidentialite.html">Confidentialité</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Psymaroc.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarEl = document.getElementById('calendar');
+            const section = document.getElementById('calendarSection');
+            const btn = document.getElementById('showCalendarBtn');
+            let calendarInitialized = false;
+
+            btn.addEventListener('click', function () {
+                // Show section
+                section.style.display = 'block';
+                // Trigger reflow
+                section.offsetHeight;
+                section.style.opacity = '1';
+
+                btn.style.display = 'none'; // Hide button after click
+
+                if (!calendarInitialized) {
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        initialView: 'listWeek',
+                        locale: 'fr',
+                        headerToolbar: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'listWeek'
+                        },
+                        views: {
+                            listWeek: { buttonText: 'Semaine' }
+                        },
+                        validRange: function (nowDate) {
+                            return {
+                                start: nowDate,
+                                end: new Date(nowDate.valueOf() + 21 * 24 * 60 * 60 * 1000) // 3 weeks
+                            };
+                        },
+                        noEventsContent: 'Aucun créneau disponible cette semaine.',
+                        events: 'api/slots.php',
+                        eventClick: function (info) {
+                            let date = info.event.start;
+                            let dateStr = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+
+                            let confirmBooking = confirm("Voulez-vous réserver le créneau du " + dateStr + " ?\n\nCela ouvrira WhatsApp pour finaliser avec M. Bouchemmama.");
+
+                            if (confirmBooking) {
+                                let message = "Bonjour, je souhaite réserver le créneau du " + dateStr + ".";
+                                let waLink = "https://wa.me/212663056341?text=" + encodeURIComponent(message);
+                                window.open(waLink, '_blank');
+                            }
+                        },
+                        height: 'auto'
+                    });
+                    calendar.render();
+                    calendarInitialized = true;
+                }
+
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 
 </html>

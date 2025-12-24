@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilans Psychologiques - Psymaroc</title>
+    <title>Bilans Psychologiques - TherapieMarocOnline</title>
+
+    <!-- CSS & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,74 +16,64 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="../index.html" class="logo">Psymaroc.</a>
-            <nav class="main-nav">
-                <ul>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">TherapieMarocOnline.</a>
+            <nav>
+                <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
                     <li><a href="index.html" class="active">Services</a></li>
                     <li><a href="../equipe.html">Équipe</a></li>
                     <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="../contact.html">Contact</a></li>
-                    <li><a href="../rdv.html" class="btn btn-primary">Prendre RDV</a></li>
                 </ul>
             </nav>
-            <div class="burger-menu" id="burgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="../rdv.html" class="btn btn-primary">Prendre RDV</a>
         </div>
     </header>
 
     <main>
-        <section class="section">
-            <div class="container" style="max-width: 800px;">
-                <div class="section-header">
+        <section class="container" style="padding: var(--spacing-lg) 0;">
+            <div style="max-width: 800px; margin: 0 auto;">
+
+                <div class="text-center mb-lg">
                     <h1>Bilans Psychologiques</h1>
                     <p class="subtitle">Mieux comprendre le fonctionnement cognitif et émotionnel.</p>
                 </div>
 
-                <div style="margin-bottom: 2rem;">
+                <div class="mb-lg">
                     <p>Le bilan psychologique est un outil d'évaluation complet qui permet de mieux comprendre le
                         fonctionnement d'une personne, ses forces et ses fragilités. Il se déroule généralement en
                         plusieurs séances (entretien, passation de tests, restitution).</p>
                 </div>
 
-                <h3>Types de bilans proposés :</h3>
-                <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
-                    <li><strong>Bilan Cognitif (QI) :</strong> Test WISC-V (enfants) et WAIS-IV (adultes) pour évaluer
-                        l'efficience intellectuelle.</li>
-                    <li><strong>Bilan de Personnalité :</strong> Tests projectifs (Rorschach, TAT) pour explorer la
-                        sphère affective.</li>
-                    <li><strong>Bilan Neuropsychologique :</strong> Évaluation de l'attention (TDAH), de la mémoire et
-                        des fonctions exécutives.</li>
-                    <li><strong>Bilan d'Orientation :</strong> Pour les adolescents et étudiants en quête de voie
-                        professionnelle.</li>
-                </ul>
+                <div class="card">
+                    <h3>Types de bilans proposés :</h3>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Bilan Cognitif (QI) :</strong> Test WISC-V (enfants) et WAIS-IV (adultes).</li>
+                        <li><strong>Bilan de Personnalité :</strong> Tests projectifs (Rorschach, TAT).</li>
+                        <li><strong>Bilan Neuropsychologique :</strong> Attention (TDAH), mémoire, fonctions exécutives.
+                        </li>
+                        <li><strong>Bilan d'Orientation :</strong> Pour les adolescents et étudiants.</li>
+                    </ul>
+                </div>
 
-                <div style="text-align: center; margin-top: 3rem;">
+                <div class="text-center" style="margin-top: 3rem;">
                     <a href="../rdv.html" class="btn btn-primary">Prendre Rendez-vous</a>
                 </div>
+
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Psymaroc.</h3>
-                    <p>Votre partenaire santé mentale à Casablanca.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Psymaroc.</p>
-            </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 TherapieMarocOnline. Tous droits réservés.</p>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@ Ce document définit la roadmap pour développer une plateforme concurrente à P
 
 ## 1. Analyse Critique & Opportunités de Différenciation
 
-### Points faibles identifiés chez la concurrence (Psymaghreb)
+### Points faibles identifiés chez la concurrence (a evité)
 *   **Design "Clinique" & Daté** : L'esthétique "Bleu/Or" est classique mais peut paraître froide, institutionnelle et créer une distance émotionnelle.
 *   **Navigation Complexe** : Mélange de pages statiques HTML et d'outils React (`/outils`) créant une friction technique et une incohérence visuelle.
 *   **Conversion Manuelle** : Dépendance forte à WhatsApp pour la prise de RDV, nécessitant des interactions humaines chronophages avant la vente.
@@ -82,17 +82,6 @@ Le contenu doit passer du "Descriptif" au "Narratif".
     *   Cas clients anonymisés (Storytelling : "L'histoire de Karim, qui a vaincu son burnout").
 *   **Transparence des Prix** :
     *   Afficher les tarifs de manière claire et assumée (ex: "Pas de surprise, 250DH la séance").
-
----
-
-## 5. Recommandation Technique (Stack Moderne)
-
-Pour écraser la concurrence sur la performance (Core Web Vitals) et l'expérience utilisateur :
-
-*   **Frontend** : **Next.js** ou **Remix** (React). Permet un site ultra-rapide, un SEO parfait (SSR) et des transitions fluides.
-*   **CMS Headless** : **Sanity.io** ou **Strapi**. Pour gérer le blog et les profils psy facilement sans toucher au code.
-*   **Hébergement** : **Vercel** (si Next.js). Déploiement mondial, rapidité extrême.
-*   **Analytics Respectueux** : **Plausible** ou **Fathom** (au lieu de Google Analytics) pour respecter la vie privée des patients (argument de vente !).
 
 ---
 

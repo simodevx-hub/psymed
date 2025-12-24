@@ -4,97 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services - Psymaroc</title>
+    <title>Nos Services de Psychologie à Casablanca | TherapieMarocOnline</title>
+    <meta name="description"
+        content="Découvrez nos thérapies comportementales et cognitives (TCC) à Casablanca : Adulte, Enfant, Ado, Couple et Bilans psychologiques.">
+
+    <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- JSON-LD: Services Listing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalSpecialty",
+      "name": "Psychologie Clinique",
+      "medicalSpecialty": ["Psychology", "Psychiatric"],
+      "availableService": [
+        { "@type": "TherapeuticProcedure", "name": "Thérapie Adulte" },
+        { "@type": "TherapeuticProcedure", "name": "Thérapie Enfant & Adolescent" },
+        { "@type": "TherapeuticProcedure", "name": "Thérapie de Couple" },
+        { "@type": "MedicalTest", "name": "Bilans Psychologiques" }
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="../index.html" class="logo">Psymaroc.</a>
-            <nav class="main-nav">
-                <ul>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">TherapieMarocOnline.</a>
+            <nav>
+                <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="index.html" class="active">Services</a></li>
+                    <li><a href="index.html" class="active"
+                            style="text-decoration: underline; text-decoration-color: var(--color-secondary);">Services</a>
+                    </li>
                     <li><a href="../equipe.html">Équipe</a></li>
                     <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="../contact.html">Contact</a></li>
-                    <li><a href="../rdv.html" class="btn btn-primary">Prendre RDV</a></li>
                 </ul>
             </nav>
-            <div class="burger-menu" id="burgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="../rdv.html" class="btn btn-primary">Prendre RDV</a>
         </div>
     </header>
 
     <main>
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h1>Nos Prestations</h1>
-                    <p class="subtitle">Un accompagnement sur-mesure pour chaque besoin.</p>
-                </div>
+        <section class="container" style="padding: var(--spacing-lg) 0;">
+            <div class="text-center mb-lg">
+                <h1>Nos Prestations</h1>
+                <p>Un accompagnement sur-mesure pour chaque besoin.</p>
+            </div>
 
-                <div class="services-grid">
-                    <a href="therapie-adulte.html" class="service-card">
-                        <div class="service-icon">👤</div>
-                        <h3>Thérapie Adulte</h3>
-                        <p>Dépression, anxiété, gestion du stress ou développement personnel.</p>
-                        <span
-                            style="color: var(--color-accent); font-weight: 500; font-size: 0.9rem; margin-top: 1rem; display: block;">Découvrir
-                            →</span>
-                    </a>
-                    <a href="therapie-enfant-ado.html" class="service-card">
-                        <div class="service-icon">🧸</div>
-                        <h3>Enfant & Adolescent</h3>
-                        <p>Troubles de l'apprentissage, TDAH, gestion des émotions et de l'adolescence.</p>
-                        <span
-                            style="color: var(--color-accent); font-weight: 500; font-size: 0.9rem; margin-top: 1rem; display: block;">Découvrir
-                            →</span>
-                    </a>
-                    <a href="therapie-couple.html" class="service-card">
-                        <div class="service-icon">🤝</div>
-                        <h3>Thérapie de Couple</h3>
-                        <p>Restaurer la communication et surmonter les crises conjugales.</p>
-                        <span
-                            style="color: var(--color-accent); font-weight: 500; font-size: 0.9rem; margin-top: 1rem; display: block;">Découvrir
-                            →</span>
-                    </a>
-                    <a href="bilans-psychologiques.html" class="service-card">
-                        <div class="service-icon">📊</div>
-                        <h3>Bilans Psychologiques</h3>
-                        <p>Tests de QI (WISC, WAIS), bilans de personnalité et neuropsychologiques.</p>
-                        <span
-                            style="color: var(--color-accent); font-weight: 500; font-size: 0.9rem; margin-top: 1rem; display: block;">Découvrir
-                            →</span>
-                    </a>
-                </div>
+            <div class="grid grid-3">
+                <a href="therapie-adulte.html" class="card">
+                    <span class="card-icon">👤</span>
+                    <h3>Thérapie Adulte</h3>
+                    <p>Dépression, anxiété, gestion du stress ou développement personnel. Une approche bienveillante
+                        pour surmonter vos difficultés.</p>
+                    <strong style="color: var(--color-secondary);">Découvrir →</strong>
+                </a>
+
+                <a href="therapie-enfant-ado.html" class="card">
+                    <span class="card-icon">🧸</span>
+                    <h3>Enfant & Adolescent</h3>
+                    <p>Troubles de l'apprentissage, TDAH, gestion des émotions et de l'adolescence. Aider votre enfant à
+                        s'épanouir.</p>
+                    <strong style="color: var(--color-secondary);">Découvrir →</strong>
+                </a>
+
+                <a href="therapie-couple.html" class="card">
+                    <span class="card-icon">🤝</span>
+                    <h3>Thérapie de Couple</h3>
+                    <p>Restaurer la communication et surmonter les crises conjugales. Pour une relation plus apaisée.
+                    </p>
+                    <strong style="color: var(--color-secondary);">Découvrir →</strong>
+                </a>
+
+                <a href="bilans-psychologiques.html" class="card">
+                    <span class="card-icon">📊</span>
+                    <h3>Bilans Psychologiques</h3>
+                    <p>Tests de QI (WISC, WAIS), bilans de personnalité et neuropsychologiques.</p>
+                    <strong style="color: var(--color-secondary);">Découvrir →</strong>
+                </a>
+
+                <a href="expatries-mre.html" class="card">
+                    <span class="card-icon">🌍</span>
+                    <h3>Expatriés & MRE</h3>
+                    <p>Soutien dédié aux Marocains du Monde : gestion du mal du pays et dissonance culturelle.</p>
+                    <strong style="color: var(--color-secondary);">Découvrir →</strong>
+                </a>
+
+                <a href="accompagnement-familial.html" class="card">
+                    <span class="card-icon">👨‍👩‍👧‍👦</span>
+                    <h3>Famille</h3>
+                    <p>Médiation familiale et résolution de conflits intergénérationnels.</p>
+                    <strong style="color: var(--color-secondary);">Découvrir →</strong>
+                </a>
+
+                <a href="coaching-vie.html" class="card">
+                    <span class="card-icon">🔄</span>
+                    <h3>Coaching de Vie</h3>
+                    <p>Développement personnel et coaching de performance pour atteindre vos objectifs.</p>
+                    <strong style="color: var(--color-secondary);">Découvrir →</strong>
+                </a>
             </div>
         </section>
+
+        <!-- CTA -->
+        <section class="container" style="text-align: center; padding-bottom: var(--spacing-lg);">
+            <div style="background-color: #f0f0f0; padding: var(--spacing-md); border-radius: var(--radius);">
+                <h3>Pas sûr de ce dont vous avez besoin ?</h3>
+                <p style="margin-bottom: var(--spacing-sm);">Contactez-nous pour une orientation gratuite.</p>
+                <a href="../contact.html" class="btn btn-outline">Nous contacter</a>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="site-footer">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Psymaroc.</h3>
+            <div class="grid grid-3">
+                <div>
+                    <h3>TherapieMarocOnline.</h3>
                     <p>Votre partenaire santé mentale à Casablanca.</p>
                 </div>
+                <div>
+                    <h3>Liens Utiles</h3>
+                    <ul>
+                        <li><a href="../">Accueil</a></li>
+                        <li><a href="../equipe.html">Notre Équipe</a></li>
+                        <li><a href="../rdv.html">Prendre RDV</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>contact@therapiemaroconline.com</p>
+                    <p>Casablanca, Maroc</p>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Psymaroc.</p>
+            <div class="text-center"
+                style="margin-top: var(--spacing-lg); border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-md);">
+                <small>&copy; 2025 TherapieMarocOnline. Tous droits réservés.</small>
             </div>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+
 </body>
 
 </html>

@@ -3,12 +3,62 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://psymed.space/">
-    <title>Redirection vers le Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Blog de TherapieMarocOnline - Santé Mentale et Bien-être</title>
+
+    <!-- CSS & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <p>Redirection vers notre blog... <a href="https://psymed.space/">Cliquez ici si vous n'êtes pas redirigé.</a></p>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">TherapieMarocOnline.</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../services/index.html">Services</a></li>
+                    <li><a href="../equipe.html">Équipe</a></li>
+                    <li><a href="index.html" class="active"
+                            style="text-decoration: underline; text-decoration-color: var(--color-secondary);">Blog</a>
+                    </li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="../rdv.html" class="btn btn-primary">Prendre RDV</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="container"
+            style="padding: var(--spacing-lg) 0; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h1>Le Blog TherapieMarocOnline</h1>
+                <p class="subtitle">Nos articles sur la psychologie, le bien-être et la santé mentale.</p>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: #f9fafb; border-radius: var(--radius);">
+                    <span style="font-size: 3rem;">✍️</span>
+                    <h3 style="margin-top: 1rem;">Bientôt Disponible</h3>
+                    <p>Nos experts rédigent actuellement des contenus passionnants pour vous.</p>
+                    <a href="../index.html" class="btn btn-outline" style="margin-top: 1.5rem;">Retour à l'accueil</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 TherapieMarocOnline. Tous droits réservés.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

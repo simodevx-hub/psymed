@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychologue Enfant & Ado Casablanca - Psymaroc</title>
+    <title>Psychologue Enfant & Ado Casablanca - TherapieMarocOnline</title>
     <meta name="description"
         content="Thérapie pour enfants et adolescents à Casablanca. Troubles de l'apprentissage (DYS/TDAH), anxiété scolaire, gestion des émotions et guidance parentale.">
 
-    <!-- Fonts -->
+    <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,7 +18,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
 
-    <!-- Schema.org JSON-LD -->
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,165 +27,119 @@
       "description": "Accompagnement psychologique pour les jeunes : troubles scolaires, émotionnels et comportementaux.",
       "provider": {
         "@type": "MedicalOrganization",
-        "name": "Psymaroc",
-        "location": {
-            "@type": "Place",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Casablanca",
-                "addressCountry": "MA"
-            }
-        }
+        "name": "TherapieMarocOnline"
       },
-      "medicalAudience": "Enfants, Adolescents, Parents",
-      "about": [
-        { "@type": "MedicalCondition", "name": "TDAH" },
-        { "@type": "MedicalCondition", "name": "Troubles DYS" },
-        { "@type": "MedicalCondition", "name": "Anxiété de séparation" }
-      ]
+      "medicalAudience": "Enfants, Adolescents, Parents"
     }
     </script>
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="../index.html" class="logo">Psymaroc.</a>
-            <nav class="main-nav">
-                <ul>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">TherapieMarocOnline.</a>
+            <nav>
+                <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
                     <li><a href="index.html" class="active">Services</a></li>
                     <li><a href="../equipe.html">Équipe</a></li>
                     <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="../contact.html">Contact</a></li>
-                    <li><a href="../rdv.html" class="btn btn-primary">Prendre RDV</a></li>
                 </ul>
             </nav>
-            <div class="burger-menu" id="burgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="../rdv.html" class="btn btn-primary">Prendre RDV</a>
         </div>
     </header>
 
     <main>
-        <section class="service-hero">
-            <img src="../img/ado.jpg" alt="Thérapie enfant et adolescent" style="object-position: center;">
-            <div class="service-hero-overlay"></div>
-            <div class="service-hero-content">
+        <!-- Hero -->
+        <section class="hero" style="min-height: 50vh;">
+            <picture>
+                <source srcset="../img/ado.webp" type="image/webp">
+                <img src="../img/ado.jpg" alt="Thérapie enfant et adolescent" class="hero-bg"
+                    style="object-position: center;">
+            </picture>
+            <div class="container hero-content">
                 <h1>Thérapie Enfant & Adolescent</h1>
                 <p>Aider les plus jeunes à grandir, s'exprimer et surmonter les obstacles.</p>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container" style="max-width: 800px;">
-                <!-- Intro -->
-                <div style="margin-bottom: 3rem;">
+        <!-- Content -->
+        <section class="container" style="padding: var(--spacing-lg) 0;">
+            <div style="max-width: 800px; margin: 0 auto;">
+
+                <div class="mb-lg">
                     <h2>Quand faut-il consulter pour son enfant ?</h2>
-                    <p>L'enfance et l'adolescence sont des périodes de bouleversements intenses. Il n'est pas toujours
-                        facile pour les parents de distinguer une "crise de croissance" normale d'une véritable
-                        souffrance psychique. Notre rôle est d'offrir un espace neutre où la parole peut se libérer.</p>
-                    <p>Les motifs de consultation fréquents incluent :</p>
-                    <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 1rem; line-height: 1.8;">
-                        <li><strong>Difficultés scolaires :</strong> Chute des résultats, phobie scolaire, troubles de
-                            la concentration (TDAH).</li>
+                    <p>L'enfance et l'adolescence sont des périodes de bouleversements intenses. Notre rôle est d'offrir
+                        un espace neutre où la parole peut se libérer.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Difficultés scolaires :</strong> Chute des résultats, phobie scolaire, TDAH.</li>
                         <li><strong>Troubles du comportement :</strong> Agressivité, opposition, repli sur soi.</li>
-                        <li><strong>Événements familiaux :</strong> Divorce, deuil, arrivée d'un nouveau-né.</li>
-                        <li><strong>Adolescence :</strong> Conduites à risques, troubles alimentaires, anxiété sociale.
-                        </li>
+                        <li><strong>Événements familiaux :</strong> Divorce, deuil.</li>
+                        <li><strong>Adolescence :</strong> Conduites à risques, anxiété sociale.</li>
                     </ul>
                 </div>
 
-                <!-- Methodology -->
-                <div
-                    style="margin-bottom: 3rem; background-color: #f0fdf4; padding: 2rem; border-radius: var(--radius-md); border-left: 5px solid var(--color-primary);">
-                    <h3 style="margin-bottom: 1rem;">La Guidance Parentale</h3>
-                    <p>Nous ne soignons pas l'enfant "seul". L'implication des parents est cruciale. Nous proposons
-                        régulièrement des séances de <strong>guidance parentale</strong> pour vous donner des clés de
-                        compréhension et des outils concrets pour apaiser le quotidien à la maison.</p>
+                <div class="card mb-lg" style="background-color: #f0fdf4; border-left: 5px solid var(--color-primary);">
+                    <h3>La Guidance Parentale</h3>
+                    <p>Nous ne soignons pas l'enfant "seul". L'implication des parents est cruciale. Nous proposons des
+                        séances de guidance pour vous donner des clés de compréhension.</p>
                 </div>
 
-                <!-- Methodes -->
-                <div style="margin-bottom: 3rem;">
+                <div class="mb-lg">
                     <h2>Nos Outils Thérapeutiques</h2>
-                    <div class="features-grid" style="text-align: left; margin-top: 2rem;">
-                        <div class="feature-item">
-                            <h4 style="color: var(--color-accent);">🎨 Art-Thérapie & Jeu</h4>
-                            <p>Pour les plus jeunes, le dessin et le jeu sont les meilleurs moyens d'exprimer ce que les
-                                mots ne peuvent dire.</p>
+                    <div class="grid grid-3" style="text-align: left; margin-top: 1.5rem;">
+                        <div>
+                            <h4 style="color: var(--color-secondary);">🎨 Art-Thérapie & Jeu</h4>
+                            <p class="text-sm">Le dessin et le jeu sont les meilleurs moyens d'exprimer ce que les mots
+                                ne peuvent dire.</p>
                         </div>
-                        <div class="feature-item">
-                            <h4 style="color: var(--color-accent);">🧩 Remédiation Cognitive</h4>
-                            <p>Des exercices ludiques pour renforcer l'attention et la mémoire (spécifique TDAH/DYS).
-                            </p>
+                        <div>
+                            <h4 style="color: var(--color-secondary);">🧩 Remédiation Cognitive</h4>
+                            <p class="text-sm">Exercices ludiques pour renforcer l'attention (TDAH/DYS).</p>
                         </div>
-                        <div class="feature-item">
-                            <h4 style="color: var(--color-accent);">🗣️ Groupe de Parole</h4>
-                            <p>Pour les adolescents, partager avec des pairs permet de rompre l'isolement (sur demande).
-                            </p>
+                        <div>
+                            <h4 style="color: var(--color-secondary);">🗣️ Groupe de Parole</h4>
+                            <p class="text-sm">Pour rompre l'isolement des adolescents (sur demande).</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- FAQ Schema -->
-                <div style="margin-bottom: 4rem;">
+                <!-- FAQ -->
+                <div class="mb-lg">
                     <h2>Questions Fréquentes</h2>
-
-                    <div style="margin-top: 1.5rem;">
-                        <details style="padding: 1rem; border-bottom: 1px solid #e5e7eb; cursor: pointer;">
-                            <summary style="font-weight: 600; color: var(--color-primary);">À quel âge peut-on commencer
-                                ?</summary>
-                            <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--color-text-light);">Dès le
-                                plus jeune âge (3 ans ou même avant pour des troubles du sommeil/alimentation) via des
-                                consultations parents-bébé. Le cadre s'adapte à l'âge (jeu, dessin, puis parole).</p>
-                        </details>
-
-                        <details style="padding: 1rem; border-bottom: 1px solid #e5e7eb; cursor: pointer;">
-                            <summary style="font-weight: 600; color: var(--color-primary);">Les parents assistent-ils
-                                aux séances ?</summary>
-                            <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--color-text-light);">Pour les
-                                jeunes enfants, oui, au moins en partie. Pour les adolescents, la confidentialité est
-                                primordiale pour créer l'alliance thérapeutique, mais des points réguliers sont faits
-                                avec les parents.</p>
-                        </details>
-                    </div>
+                    <details style="padding: 1rem; border-bottom: 1px solid #eee;">
+                        <summary style="font-weight: bold; cursor: pointer;">À quel âge peut-on commencer ?</summary>
+                        <p style="margin-top: 0.5rem;">Dès le plus jeune âge (3 ans) via le jeu et le dessin.</p>
+                    </details>
+                    <details style="padding: 1rem; border-bottom: 1px solid #eee;">
+                        <summary style="font-weight: bold; cursor: pointer;">Les parents assistent-ils aux séances ?
+                        </summary>
+                        <p style="margin-top: 0.5rem;">Pour les jeunes enfants, oui. Pour les ados, la confidentialité
+                            prime.</p>
+                    </details>
                 </div>
 
                 <!-- CTA -->
-                <div
-                    style="text-align: center; background-color: var(--color-bg-alt); padding: 3rem; border-radius: var(--radius-lg);">
-                    <h3 style="margin-bottom: 1rem;">Aidez votre enfant à s'épanouir</h3>
-                    <p style="margin-bottom: 2rem;">Nos spécialistes sont là pour vous écouter et vous guider.</p>
+                <div class="text-center card">
+                    <h3>Aidez votre enfant à s'épanouir</h3>
+                    <p class="mb-lg">Nos spécialistes sont là pour vous guider.</p>
                     <a href="../rdv.html" class="btn btn-primary">Prendre RDV</a>
                 </div>
+
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Psymaroc.</h3>
-                    <p>Votre partenaire santé mentale à Casablanca.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="therapie-adulte.html">Thérapie Adulte</a></li>
-                        <li><a href="therapie-enfant-ado.html">Enfant & Ado</a></li>
-                        <li><a href="therapie-couple.html">Thérapie de Couple</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Psymaroc.</p>
-            </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 TherapieMarocOnline. Tous droits réservés.</p>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+
 </body>
 
 </html>
