@@ -20,6 +20,18 @@ if ($method === 'GET') {
 }
 
 if ($method === 'POST') {
+    require_once 'config.php';
+    
+    // Check Authorization Header
+    $headers = getallheaders();
+    $authHeader = isset($headers['Authorization']) ? $headers['Authorization'] : '';
+    
+    if (trim($authHeader) !== 'Bearer ' . API_SECRET) {
+        http_response_code(403);
+        echo json_encode(['error' => 'Unauthorized']);
+        exit;
+    }
+
     $input = json_decode(file_get_contents('php://input'), true);
     
     if (!isset($input['action'])) {

@@ -140,12 +140,20 @@
         });
 
         // --- API Helpers ---
+        // Simple security for this phase: Prompt on load
+        const API_KEY = prompt("Veuillez entrer la clé de sécurité Admin (ex: PsyMed...):", "PsyMed_Secr3t_K3y_2025");
 
         async function addSlot(start, end) {
             try {
                 const res = await fetch('../api/slots.php', {
-                    method: 'POST', body: JSON.stringify({ action: 'add', start, end })
+                    method: 'POST', 
+                    headers: {
+                        'Authorization': 'Bearer ' + API_KEY,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ action: 'add', start, end })
                 });
+                if(!res.ok) throw new Error("Auth failed");
                 calendar.refetchEvents();
             } catch(e) { console.error(e); alert('Erreur ajout'); }
         }
@@ -153,7 +161,12 @@
         async function deleteSlot(id) {
             try {
                 await fetch('../api/slots.php', {
-                     method: 'POST', body: JSON.stringify({ action: 'delete', id })
+                     method: 'POST', 
+                     headers: {
+                        'Authorization': 'Bearer ' + API_KEY,
+                        'Content-Type': 'application/json'
+                    },
+                     body: JSON.stringify({ action: 'delete', id })
                 });
             } catch(e) { console.error(e); alert('Erreur suppression'); }
         }
@@ -166,7 +179,14 @@
 
         async function cleanHistory() {
              if(!confirm("Supprimer tout le passé ?")) return;
-             await fetch('../api/slots.php', { method: 'POST', body: JSON.stringify({ action: 'cleanup' }) });
+             await fetch('../api/slots.php', { 
+                 method: 'POST', 
+                 headers: {
+                    'Authorization': 'Bearer ' + API_KEY,
+                    'Content-Type': 'application/json'
+                },
+                 body: JSON.stringify({ action: 'cleanup' }) 
+            });
              calendar.refetchEvents();
              alert('Nettoyé !');
         }
