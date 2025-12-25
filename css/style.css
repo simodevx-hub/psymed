@@ -374,6 +374,11 @@ h3 {
 
 @media (max-width: 768px) {
 
+    /* Fix Sticky Bar Overlap */
+    body {
+        padding-bottom: 90px;
+    }
+
     /* Refined Typography for Mobile */
     h1 {
         font-size: 2.25rem !important;
@@ -418,6 +423,10 @@ h3 {
         /* Offset for fixed header */
     }
 
+    .hero-bg {
+        object-position: center 20%;
+    }
+
     /* Better Button Sizes */
     .btn {
         min-height: 48px;
@@ -427,6 +436,41 @@ h3 {
     /* Navigation link size mobile */
     .nav-links a {
         font-size: 1.5rem;
+    }
+
+    /* Active Feedback */
+    .card:active {
+        transform: scale(0.98);
+        background-color: #fcfcfc;
+    }
+}
+
+/* Mobile Language Switcher Styles */
+.mobile-lang-switcher {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .mobile-lang-switcher {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        margin-left: auto;
+        z-index: 1001;
+    }
+
+    .burger-menu {
+        margin-left: 0;
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+    }
+
+    .navbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 

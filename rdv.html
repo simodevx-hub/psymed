@@ -153,6 +153,14 @@
                 <img src="img/logo.png" alt="TherapieMarocOnline" style="vertical-align: middle;">
             </a>
 
+            <!-- Mobile Language Switcher (Visible on mobile only) -->
+            <div class="mobile-lang-switcher">
+                <a href="index_ar.html" title="العربية"
+                    style="font-weight: 700; font-size: 1rem; padding: 0.5rem; border: 1px solid rgba(0,0,0,0.1); border-radius: 6px; background: rgba(255,255,255,0.5);">
+                    AR
+                </a>
+            </div>
+
             <div class="burger-menu" id="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -164,19 +172,65 @@
                     <li><a href="services/index.html">Services</a></li>
                     <li><a href="equipe.html">Équipe</a></li>
                     <li><a href="contact.html">Contact</a></li>
+
+                    <!-- Mobile Only Items -->
+                    <li class="mobile-only-item show-on-mobile">
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="index.html" class="lang-link active" title="Français">
+                                <span style="font-size: 1.5rem;">🇫🇷</span>
+                            </a>
+                            <a href="index_ar.html" class="lang-link" title="العربية">
+                                <span style="font-size: 1.5rem;">🇲🇦</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="mobile-only-item show-on-mobile">
+                        <a href="rdv.html" class="btn btn-primary"
+                            style="width: 100%; text-align: center; justify-content: center;">Prendre RDV</a>
+                    </li>
                 </ul>
             </nav>
-            <a href="rdv.html" class="btn btn-primary nav-cta">Prendre RDV</a>
+            <a href="rdv.html" class="btn btn-primary nav-cta desktop-only">Prendre RDV</a>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <script>
         const burger = document.getElementById('burger');
         const nav = document.querySelector('.nav-links');
+        const overlay = document.getElementById('mobileOverlay');
+        const navLinks = document.querySelectorAll('.nav-links a');
 
-        burger.addEventListener('click', () => {
+        // Toggle menu
+        function toggleMenu() {
             nav.classList.toggle('nav-active');
             burger.classList.toggle('toggle');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('nav-active') ? 'hidden' : '';
+        }
+
+        // Open/close on burger click
+        burger.addEventListener('click', toggleMenu);
+
+        // Close on overlay click
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('nav-active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('nav-active')) {
+                toggleMenu();
+            }
         });
     </script>
 
