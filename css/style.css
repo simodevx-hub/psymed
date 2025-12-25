@@ -381,26 +381,31 @@ h3 {
 
     /* Refined Typography for Mobile */
     h1 {
-        font-size: 2.25rem !important;
-        /* Slightly smaller to prevent overflow */
-        line-height: 1.2;
+        font-size: 2rem !important;
+        /* Smaller header for better fit */
+        line-height: 1.25;
+        margin-bottom: 1rem;
     }
 
     h2 {
-        font-size: 1.75rem !important;
+        font-size: 1.5rem !important;
     }
 
     /* Spacing Adjustment */
     .container {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: 1.5rem;
+        /* More breathing room */
+        padding-right: 1.5rem;
     }
 
-    /* Stats Card Mobile Layout */
+    /* Stats Card Mobile Layout - Fix Overlap */
     .stats-card {
         padding: 1.5rem !important;
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        margin-top: 2rem !important;
+        /* Move it down, no negative margin */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
     }
 
     .stat-item {
@@ -417,20 +422,28 @@ h3 {
 
     /* Hero Height */
     .hero {
-        min-height: 85vh;
-        /* Taller hero on mobile for impact */
-        padding-top: 4rem;
-        /* Offset for fixed header */
+        min-height: auto;
+        padding: 6rem 1.5rem 3rem 1.5rem;
+        /* Top padding for header, bottom for content */
+        text-align: center;
+        /* Ensure center alignment */
+    }
+
+    .hero-content {
+        padding: 0;
+        width: 100%;
     }
 
     .hero-bg {
-        object-position: center 20%;
+        object-position: center 25%;
     }
 
     /* Better Button Sizes */
     .btn {
-        min-height: 48px;
-        /* Hit target size */
+        min-height: 52px;
+        width: 100%;
+        /* Full width buttons on mobile */
+        margin-bottom: 0.5rem;
     }
 
     /* Navigation link size mobile */
