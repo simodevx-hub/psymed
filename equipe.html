@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre Équipe de Psychologues à Casablanca | TherapieMarocOnline</title>
+    <title>Notre Équipe de Psychologues en Ligne | TherapieMarocOnline</title>
     <meta name="description"
-        content="Découvrez notre équipe de psychologues cliniciens et psychothérapeutes à Casablanca. Experts en TCC, thérapie familiale et gestion du stress.">
+        content="Découvrez notre équipe de psychologues cliniciens et psychothérapeutes marocains. Experts en TCC, thérapie familiale et gestion du stress en téléconsultation.">
 
     <!-- CSS & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,16 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="container navbar-content">
-            <a href="/" class="logo">TherapieMarocOnline.</a>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="TherapieMarocOnline" style="vertical-align: middle;">
+            </a>
+
+            <div class="burger-menu" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Accueil</a></li>
@@ -52,9 +61,20 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <a href="rdv.html" class="btn btn-primary">Prendre RDV</a>
+
+            <a href="rdv.html" class="btn btn-primary nav-cta">Prendre RDV</a>
         </div>
     </header>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
 
     <main>
         <!-- Single Expert Profile -->
@@ -86,9 +106,10 @@
 
                         <p style="margin-bottom: 1.5rem; line-height: 1.6;">
                             Mohamed Bouchemmama est un psychologue clinicien expérimenté spécialisé dans l'approche
-                            cognitivo-comportementale (TCC) et les thérapies brèves. Avec plus de 3 années d'expérience
-                            clinique, il vous accompagne dans la gestion du stress, de l'anxiété, de la dépression et
-                            des difficultés relationnelles.
+                            cognitivo-comportementale (TCC), les thérapies brèves et la thérapie en ligne. Fort d'une
+                            expérience significative dans l'accompagnement de personnes à distance, il vous aide à gérer
+                            le stress, l'anxiété, la dépression et
+                            les difficultés relationnelles via des consultations vidéo efficaces.
                         </p>
 
                         <p style="margin-bottom: 2rem; font-style: italic; opacity: 0.8;">
@@ -98,10 +119,12 @@
 
                         <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
                             <div>
-                                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Diplômes</h4>
+                                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Diplômes & Formations</h4>
                                 <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: #555;">
                                     <li>🎓 Master en Psychologie de la Santé (2021)</li>
                                     <li>🎓 Licence en Psychologie Cognitive (2019)</li>
+                                    <li>📜 Formation TCC & Thérapies Brèves</li>
+                                    <li>💻 Certification Thérapie en Ligne</li>
                                 </ul>
                             </div>
                             <div>
@@ -113,7 +136,8 @@
                                         style="background: #eee; padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.8rem;">Thérapie
                                         Brève</span>
                                     <span
-                                        style="background: #eee; padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.8rem;">Stress</span>
+                                        style="background: #eee; padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.8rem;">Consultation
+                                        en Ligne</span>
                                 </div>
                             </div>
                         </div>
@@ -157,6 +181,7 @@
         </div>
     </footer>
 
+    <script src="/psymaroc/js/whatsapp-button.js"></script>
 </body>
 
 </html>

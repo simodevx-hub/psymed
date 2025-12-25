@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychologue Casablanca - Thérapie TCC & Bien-être | TherapieMarocOnline</title>
+    <title>Psychologue Marocain en Ligne - Thérapie TCC & Bien-être | TherapieMarocOnline</title>
     <meta name="description"
-        content="Cabinet de psychologie à Casablanca (Gauthier). Thérapies TCC, gestion du stress et soutien émotionnel. Prenez RDV en ligne pour une consultation bienveillante.">
+        content="Psychologue agréé proposant des thérapies en ligne (TCC) pour les Marocains. Gestion du stress, anxiété et dépression via consultation vidéo confidentielle.">
 
     <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,19 +35,15 @@
             "priceRange": "250 MAD",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "123 Boulevard d'Anfa, Quartier Gauthier",
-                "addressLocality": "Casablanca",
-                "addressRegion": "Casablanca-Settat",
-                "postalCode": "20000",
                 "addressCountry": "MA"
             },
             "areaServed": [
                 "Morocco",
-                "Casablanca",
-                "Rabat",
-                "Marrakech",
-                "Fes",
-                "Agadir"
+                "World",
+                "France",
+                "Belgium",
+                "Canada",
+                "UAE"
             ],
             "availableService": [
                 {
@@ -212,7 +208,16 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="container navbar-content">
-            <a href="/" class="logo">TherapieMarocOnline.</a>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="TherapieMarocOnline" style="vertical-align: middle;">
+            </a>
+
+            <div class="burger-menu" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Accueil</a></li>
@@ -222,16 +227,45 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div style="display: flex; gap: 0.5rem; align-items: center; margin-right: 1rem;">
-                <span style="font-weight: bold; color: var(--color-primary);">FR</span>
-                <span style="opacity: 0.3;">|</span>
-                <a href="index_ar.html" class="logo"
-                    style="color: #666; text-decoration: none; font-weight: 500; font-family: 'Noto Kufi Arabic', sans-serif;">AR
-                    (العربية)</a>
+
+            <div style="display: flex; gap: 0.75rem; align-items: center; margin-right: 1.5rem;">
+                <!-- FR Flag -->
+                <a href="index.html" aria-label="Français" title="Français"
+                    style="opacity: 1; transition: opacity 0.2s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="28" height="20"
+                        style="border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); display: block;">
+                        <rect width="3" height="2" fill="#ED2939" />
+                        <rect width="2" height="2" fill="#fff" />
+                        <rect width="1" height="2" fill="#002395" />
+                    </svg>
+                </a>
+                <!-- MA Flag -->
+                <a href="index_ar.html" aria-label="Arabe" title="العربية"
+                    style="opacity: 0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'"
+                    onmouseout="this.style.opacity='0.7'">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="28" height="20"
+                        style="border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); display: block;">
+                        <rect width="3" height="2" fill="#C1272D" />
+                        <!-- Green Pentagram (Simplified) -->
+                        <path fill="none" stroke="#006233" stroke-width="0.15"
+                            d="M1.5 0.5 L1.85 1.5 L1 0.9 L2 0.9 L1.15 1.5 Z" />
+                    </svg>
+                </a>
             </div>
-            <a href="rdv.html" class="btn btn-primary">Prendre RDV</a>
+
+            <a href="rdv.html" class="btn btn-primary nav-cta">Prendre RDV</a>
         </div>
     </header>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
 
     <main>
         <!-- Hero Section -->
@@ -242,13 +276,13 @@
             </picture>
 
             <div class="container hero-content">
-                <h1 style="max-width: 900px; margin-left: auto; margin-right: auto;">Psychologue Clinicien à Casablanca
-                    & Thérapie TCC en Ligne</h1>
-                <p style="font-size: 1.25rem; max-width: 800px; margin-left: auto; margin-right: auto;">Cabinet expert
-                    en sante mentale et thérapies brèves. Traitement de l'anxiété, du stress et de la dépression par une
-                    approche scientifique et bienveillante.</p>
+                <h1 style="max-width: 900px; margin-left: auto; margin-right: auto;">Psychologue Marocain Agréé &
+                    Thérapie en Ligne</h1>
+                <p style="font-size: 1.25rem; max-width: 800px; margin-left: auto; margin-right: auto;">Votre espace de
+                    parole confidentiel, où que vous soyez. Un accompagnement expert en Darija ou Français, dédié aux
+                    Marocains du monde.</p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="rdv.html" class="btn btn-primary">Réserver ma consultation (Cabinet/Vidéo)</a>
+                    <a href="rdv.html" class="btn btn-primary">Réserver ma téléconsultation</a>
                     <a href="equipe.html" class="btn btn-outline" style="color: white; border-color: white;">Rencontrer
                         Mohamed Bouchemmama</a>
                 </div>
@@ -291,48 +325,48 @@
             </div>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Stress &
+                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Stress &
                         Surcharge mentale</h3>
                     <p class="text-sm">Sentiment d'être débordé(e), irritabilité, difficultés à déconnecter du travail
                         ou du quotidien.</p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Difficultés
+                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Difficultés
                         relationnelles</h3>
                     <p class="text-sm">Conflits répétés, incompréhensions ou sentiment d'isolement au sein de vos
                         relations.</p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Problèmes de
+                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Problèmes de
                         couple</h3>
                     <p class="text-sm">Manque de communication, jalousie, infidélité ou questionnements sur l'avenir de
                         la relation.</p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Manque de
+                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Manque de
                         confiance en soi</h3>
                     <p class="text-sm">Syndrome de l'imposteur, doute permanent, difficulté à s'affirmer ou à dire non.
                     </p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Fatigue
+                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Fatigue
                         émotionnelle</h3>
                     <p class="text-sm">Perte de motivation, tristesse inexpliquée, sentiment de vide ou d'épuisement.
                     </p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Transitions de
+                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Transitions de
                         vie</h3>
                     <p class="text-sm">Divorce, expatriation, changement de carrière, deuil ou arrivée d'un enfant.</p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Blocages & Perte
+                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Blocages & Perte
                         de sens</h3>
                     <p class="text-sm">Impression de faire du surplace, questionnements existentiels, besoin de y voir
                         plus clair.</p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">Gestion des
+                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Gestion des
                         émotions</h3>
                     <p class="text-sm">Colère, peurs irrationnelles, hypersensibilité ou difficulté à gérer ses
                         réactions.</p>
@@ -378,8 +412,9 @@
                     <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Rencontrez votre Expert</h2>
                     <h3 style="font-size: 1.25rem; color: var(--color-secondary); margin-bottom: 1rem;">Mohamed
                         Bouchemmama, Psychologue Clinicien</h3>
-                    <p style="margin-bottom: 1rem;">Spécialisé en Thérapies Cognitivo-Comportementales (TCC) et
-                        thérapies brèves. Avec plus de 3 ans d'expérience clinique, j'accompagne mes patients vers un
+                    <p style="margin-bottom: 1rem;">Spécialisé en Thérapies Cognitivo-Comportementales (TCC), thérapies
+                        brèves et thérapie en ligne. Avec une solide expérience clinique auprès de patients à distance,
+                        j'accompagne mes patients vers un
                         mieux-être durable avec une approche scientifique et bienveillante, adaptée à notre culture.</p>
                     <a href="equipe.html" class="btn btn-outline">En savoir plus sur mon parcours</a>
                 </div>
@@ -538,24 +573,31 @@
             </div>
         </section>
 
-        <!-- Location Section -->
+        <!-- Location Section REMOVED/REPLACED with Online Focus -->
         <section class="container" style="padding: var(--spacing-lg) 0;">
             <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); align-items: center;">
                 <div>
-                    <h2>Notre Cabinet à Casablanca</h2>
-                    <p class="mb-lg">Un havre de paix au cœur du quartier Gauthier.</p>
+                    <h2>Consultations 100% en Ligne</h2>
+                    <p class="mb-lg">Profitez d'un suivi psychologique de qualité depuis le confort de votre foyer. Plus
+                        de barrières géographiques.</p>
 
                     <div class="card">
-                        <h3>Nous trouver</h3>
-                        <p><strong>Adresse :</strong> 123 Boulevard d'Anfa, Quartier Gauthier, 20000 Casablanca.</p>
-                        <p><strong>Accès :</strong> À 5min du Twin Center. Parking disponible.</p>
+                        <h3>Simplicité & Flexibilité</h3>
+                        <p><strong>Plateformes :</strong> WhatsApp Vidéo, Google Meet ou Zoom.</p>
+                        <p><strong>Paiement :</strong> Virement bancaire marocain ou international.</p>
                         <br>
-                        <a href="https://maps.google.com" target="_blank" class="btn btn-outline">Itinéraire Google
-                            Maps</a>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="rdv.html" class="btn btn-outline">Voir mes disponibilités</a>
+                            <a href="https://wa.me/212663056341?text=Bonjour,%20je%20souhaite%20des%20informations"
+                                target="_blank" class="btn btn-gradient-whatsapp"
+                                style="padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; display: inline-block;">Démarrer
+                                la conversation</a>
+                        </div>
                     </div>
                 </div>
-                <div style="background: #eee; height: 400px; border-radius: var(--radius);">
-                    <img src="img/lieu.webp" alt="Intérieur du cabinet TherapieMarocOnline"
+                <div style="background: #eee; height: 400px; border-radius: var(--radius); overflow: hidden;">
+                    <!-- Replacing physical office image with "Online Therapy" concept if possible, or just keeping a generic calming image -->
+                    <img src="img/hero-bg.webp" alt="Consultation psychologue en ligne"
                         style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius);" loading="lazy">
                 </div>
             </div>
@@ -601,17 +643,7 @@
             </div>
         </section>
 
-        <!-- CTA Final -->
-        <section
-            style="background-color: var(--color-primary); color: white; padding: var(--spacing-lg) 0; text-align: center;">
-            <div class="container">
-                <h2 style="color: inherit;">Prêt à avancer ?</h2>
-                <p style="margin-bottom: var(--spacing-md); opacity: 0.9;">La première étape est souvent la plus
-                    difficile.</p>
-                <a href="rdv.html" class="btn btn-primary" style="background-color: var(--color-secondary);">Prendre
-                    mon premier RDV</a>
-            </div>
-        </section>
+        <!-- CTA Final Removed as requested -->
     </main>
 
     <footer class="footer">
@@ -632,11 +664,11 @@
                 <div>
                     <h3>Contact</h3>
                     <p>contact@therapiemaroconline.com</p>
-                    <p>Casablanca, Maroc</p>
+                    <p>Consultations 100% en ligne</p>
                 </div>
             </div>
             <div class="text-center"
-                style="margin-top: var(--spacing-lg); border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-md);">
+                style="margin-top: var(--spacing-md); border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-md);">
                 <small>&copy; 2025 TherapieMarocOnline. Tous droits réservés.</small>
                 <div style="margin-top: 0.5rem;">
                     <a href="mentions-legales.html"
@@ -671,6 +703,7 @@
         // Trigger once on load
         reveal();
     </script>
+    <script src="/psymaroc/js/whatsapp-button.js"></script>
 </body>
 
 </html>

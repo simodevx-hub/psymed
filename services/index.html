@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services de Psychologie à Casablanca | TherapieMarocOnline</title>
+    <title>Nos Services de Psychologie en Ligne | TherapieMarocOnline</title>
     <meta name="description"
-        content="Découvrez nos thérapies comportementales et cognitives (TCC) à Casablanca : Adulte, Enfant, Ado, Couple et Bilans psychologiques.">
+        content="Découvrez nos thérapies comportementales et cognitives (TCC) en ligne : Adulte, Enfant, Ado, Couple et Bilans psychologiques.">
 
     <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,16 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="container navbar-content">
-            <a href="../index.html" class="logo">TherapieMarocOnline.</a>
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.png" alt="TherapieMarocOnline" style="vertical-align: middle;">
+            </a>
+
+            <div class="burger-menu" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
@@ -52,9 +61,20 @@
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <a href="../rdv.html" class="btn btn-primary">Prendre RDV</a>
+
+            <a href="../rdv.html" class="btn btn-primary nav-cta">Prendre RDV</a>
         </div>
     </header>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
 
     <main>
         <section class="container" style="padding: var(--spacing-lg) 0;">
@@ -157,6 +177,7 @@
         </div>
     </footer>
 
+    <script src="/psymaroc/js/whatsapp-button.js"></script>
 </body>
 
 </html>

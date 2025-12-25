@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Accès - Cabinet Psychologue Casablanca | TherapieMarocOnline</title>
+    <title>Contact - Psychologue en Ligne | TherapieMarocOnline</title>
     <meta name="description"
-        content="Contactez TherapieMarocOnline pour prendre rendez-vous ou poser vos questions. Cabinet situé au Quartier Gauthier, Casablanca. Réponse rapide.">
+        content="Contactez TherapieMarocOnline pour prendre rendez-vous pour une téléconsultation. Psychologue marocain à votre écoute. Confidentialité garantie.">
 
     <!-- CSS & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,9 +27,6 @@
       "email": "contact@therapiemaroconline.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Boulevard d'Anfa, Quartier Gauthier",
-        "addressLocality": "Casablanca",
-        "postalCode": "20000",
         "addressCountry": "MA"
       }
     }
@@ -41,7 +38,16 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="container navbar-content">
-            <a href="index.html" class="logo">TherapieMarocOnline.</a>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="TherapieMarocOnline" style="vertical-align: middle;">
+            </a>
+
+            <div class="burger-menu" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Accueil</a></li>
@@ -53,9 +59,20 @@
                     </li>
                 </ul>
             </nav>
-            <a href="rdv.html" class="btn btn-primary">Prendre RDV</a>
+
+            <a href="rdv.html" class="btn btn-primary nav-cta">Prendre RDV</a>
         </div>
     </header>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
 
     <main>
         <section class="container" style="padding: var(--spacing-lg) 0;">
@@ -77,10 +94,9 @@
                                 <span style="font-size: 1.5rem;">📱</span>
                                 <div>
                                     <strong>WhatsApp</strong>
-                                    <p class="text-sm">Réponse rapide</p>
+
                                     <a href="https://wa.me/212663056341?text=Bonjour" target="_blank"
-                                        style="color: var(--color-primary); text-decoration: underline;">Démarrer la
-                                        conversation</a>
+                                        class="btn-gradient-whatsapp">Démarrer la conversation</a>
                                 </div>
                             </div>
 
@@ -157,6 +173,7 @@
         </div>
     </footer>
 
+    <script src="/psymaroc/js/whatsapp-button.js"></script>
 </body>
 
 </html>

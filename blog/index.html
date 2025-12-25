@@ -20,7 +20,16 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="container navbar-content">
-            <a href="../index.html" class="logo">TherapieMarocOnline.</a>
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.png" alt="TherapieMarocOnline" style="vertical-align: middle;">
+            </a>
+
+            <div class="burger-menu" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
@@ -32,9 +41,20 @@
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <a href="../rdv.html" class="btn btn-primary">Prendre RDV</a>
+
+            <a href="../rdv.html" class="btn btn-primary nav-cta">Prendre RDV</a>
         </div>
     </header>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
 
     <main>
         <section class="container"
@@ -59,6 +79,7 @@
         </div>
     </footer>
 
+    <script src="/psymaroc/js/whatsapp-button.js"></script>
 </body>
 
 </html>

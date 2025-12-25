@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أخصائي نفسي في الدار البيضاء - عربي وفرنسي | TherapieMarocOnline</title>
+    <title>أخصائي نفسي للمغاربة أونلاين - علاج معرفي سلوكي | TherapieMarocOnline</title>
     <meta name="description"
-        content="TherapieMarocOnline: أخصائي نفسي في الدار البيضاء (المعاريف/أنفا). علاج القلق، الاكتئاب، ومشاكل الأزواج. احجز موعدك عبر الإنترنت بسهولة.">
+        content="أخصائي نفسي معتمد يقدم جلسات علاج نفسي أونلاين للمغاربة في جميع أنحاء العالم. علاج القلق، الاكتئاب، ومشاكل الأسرة. سرية تامة وبالدارجة المغربية.">
 
     <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,37 +31,68 @@
         p,
         a,
         button,
-        .btn {
+        .btn,
+        li {
             font-family: 'Noto Kufi Arabic', sans-serif;
         }
 
+        /* Navbar RTL Fixes */
         .navbar-content {
+            flex-direction: row-reverse;
+        }
+
+        .nav-links {
             flex-direction: row-reverse;
         }
 
         .logo {
             margin-right: 0;
-            margin-left: auto;
+            /* margin-left: auto; Removed for centering */
         }
 
-        .nav-links {
-            padding-right: 0;
-            padding-left: 2rem;
+        nav {
+            margin: 0 auto;
         }
 
+        @media (max-width: 1024px) {
+            nav {
+                margin: 0;
+            }
+
+            .nav-links {
+                left: -100%;
+                right: auto;
+                transition: left 0.3s ease;
+            }
+
+            .nav-active {
+                left: 0 !important;
+                right: auto !important;
+            }
+        }
+
+        /* Grid RTL */
         .grid-3,
         .grid {
             direction: rtl;
         }
 
-        /* Override default LTR styles for RTL */
-        .text-center {
-            text-align: center;
+        /* Stats RTL Fix */
+        .stat-item {
+            border-right: none;
+            border-left: none;
         }
 
-        .mr-auto {
-            margin-left: 0;
-            margin-right: auto;
+        @media (min-width: 769px) {
+            .stat-item:nth-child(2) {
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee;
+            }
+        }
+
+        /* Override default LTR styles */
+        .text-center {
+            text-align: center;
         }
     </style>
 
@@ -75,27 +106,14 @@
       "@id": "https://therapiemaroconline.com",
       "url": "https://therapiemaroconline.com/index_ar.html",
       "telephone": "+212663056341",
-      "priceRange": "$$",
+      "priceRange": "250 MAD",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Boulevard d'Anfa, Quartier Gauthier",
-        "addressLocality": "Casablanca",
-        "postalCode": "20000",
         "addressCountry": "MA"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 33.5898,
-        "longitude": -7.6038
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "09:00",
-        "closes": "20:00"
-      },
+      "areaServed": ["Morocco", "France", "Belgium", "Canada", "UAE", "World"],
       "medicalSpecialty": ["Psychology", "Psychiatric"],
-      "knowsAbout": ["Thérapie Cognitivo-Comportementale", "Gestion du stress", "Thérapie de couple"]
+      "knowsAbout": ["Thérapie Cognitivo-Comportementale", "Gestion du stress", "Thérapie de couple", "Online Therapy"]
     }
     </script>
 </head>
@@ -104,10 +122,19 @@
 
     <!-- Navbar -->
     <header class="navbar">
-        <div class="container navbar-content" style="flex-direction: row-reverse;">
-            <a href="index_ar.html" class="logo">TherapieMarocOnline.</a>
+        <div class="container navbar-content">
+            <a href="index_ar.html" class="logo">
+                <img src="img/logo.png" alt="TherapieMarocOnline" style="vertical-align: middle;">
+            </a>
+
+            <div class="burger-menu" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
             <nav>
-                <ul class="nav-links" style="flex-direction: row-reverse;">
+                <ul class="nav-links">
                     <li><a href="index_ar.html">الرئيسية</a></li>
                     <li><a href="services/index.html">خدماتنا</a></li>
                     <li><a href="equipe.html">الفريق</a></li>
@@ -115,14 +142,46 @@
                     <li><a href="contact.html">اتصل بنا</a></li>
                 </ul>
             </nav>
-            <div style="display: flex; gap: 0.5rem; align-items: center; margin-left: 1rem; direction: ltr;">
-                <a href="index.html" style="color: #666; text-decoration: none; font-weight: 500;">FR</a>
-                <span style="opacity: 0.3;">|</span>
-                <span style="font-weight: bold; color: var(--color-primary);">AR</span>
+
+            <div style="display: flex; gap: 0.75rem; align-items: center; margin-left: 2rem; direction: ltr;">
+                <!-- FR Flag -->
+                <a href="index.html" aria-label="Français" title="Français"
+                    style="opacity: 0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'"
+                    onmouseout="this.style.opacity='0.7'">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="28" height="20"
+                        style="border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); display: block;">
+                        <rect width="3" height="2" fill="#ED2939" />
+                        <rect width="2" height="2" fill="#fff" />
+                        <rect width="1" height="2" fill="#002395" />
+                    </svg>
+                </a>
+                <!-- MA Flag -->
+                <a href="index_ar.html" aria-label="Arabe" title="العربية"
+                    style="opacity: 1; transition: opacity 0.2s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="28" height="20"
+                        style="border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); display: block;">
+                        <rect width="3" height="2" fill="#C1272D" />
+                        <!-- Green Pentagram (Simplified) -->
+                        <path fill="none" stroke="#006233" stroke-width="0.15"
+                            d="M1.5 0.5 L1.85 1.5 L1 0.9 L2 0.9 L1.15 1.5 Z" />
+                    </svg>
+                </a>
             </div>
-            <a href="rdv.html" class="btn btn-primary">حجز موعد</a>
+
+            <a href="rdv.html" class="btn btn-primary nav-cta">حجز موعد</a>
         </div>
     </header>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
 
     <main>
         <!-- Hero Section -->
@@ -133,92 +192,106 @@
             </picture>
 
             <div class="container hero-content">
-                <h1>استعد هدوءك النفسي، بدون توتر.</h1>
-                <p>علاج نفسي حديث يتفهم احتياجاتك. <br>نحن هنا للاستماع إليك، وليس للحكم عليك.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <a href="rdv.html" class="btn btn-primary">حجز موعد أونلاين</a>
-                    <a href="equipe.html" class="btn btn-outline" style="color: white; border-color: white;">من نحن
-                        ؟</a>
+                <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);">أخصائي نفسي للمغاربة أونلاين<br>علاجك النفسي، فين ما
+                    كنتي</h1>
+                <p style="font-size: 1.25rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    فضاء آمن للحديث بسرية تامة. مرافقة نفسية متخصصة بالدارجة أو الفرنسية، مخصصة للمغاربة في جميع أنحاء
+                    العالم.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="rdv.html" class="btn btn-primary">حجز استشارة أونلاين</a>
+                    <a href="equipe.html" class="btn btn-outline" style="color: white; border-color: white;">تعرف على
+                        الأخصائي</a>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 1: Situations (Identification Arabic) -->
+        <!-- Stats Section (NEW) -->
+        <section class="container" style="margin-top: -4rem; position: relative; z-index: 10; margin-bottom: 3rem;">
+            <div class="grid grid-3 stats-card"
+                style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); text-align: center; align-items: center;">
+                <div class="stat-item">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--color-primary); line-height: 1;">96%
+                    </div>
+                    <div style="color: #666; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem;">نسبة الرضا</div>
+                </div>
+                <div class="stat-item">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--color-primary); line-height: 1;">+500
+                    </div>
+                    <div style="color: #666; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem;">مستفيد</div>
+                </div>
+                <div class="stat-item">
+                    <div style="font-size: 3rem; font-weight: 800; color: #1f61d3; line-height: 1;">4.9⭐</div>
+                    <div style="color: #666; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem;">تقييم عام</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: Situations -->
         <section class="container" style="padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg);">
             <div class="text-center mb-lg">
-                <h2>متى تحتاج لاستشارة نفسية؟</h2>
-                <p>لا يجب أن تكون "مريضاً" لتزور الأخصائي النفسي. إذا كنت تشعر بالضياع، نحن هنا للمساعدة.</p>
+                <h2>فاش نقدروا نعاونوك؟</h2>
+                <p>ماشي ضروري تكون "مريض" باش تشوف بسيكولوغ. حنا هنا باش نعاونوك فالوقت الصعب.</p>
             </div>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">ضغوط العمل
-                        (Stress)</h3>
-                    <p class="text-sm">تشعر بالإرهاق المستمر، وتجد صعوبة في الفصل بين العمل والحياة الشخصية.</p>
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">الضغط و "الستريس"
+                    </h3>
+                    <p class="text-sm">كتحس براسك ديما عيان، عامر، وماقادرش ترتاح من الخدمة والمشاكل.</p>
                 </article>
                 <article class="card">
                     <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">مشاكل العلاقات
                     </h3>
-                    <p class="text-sm">خلافات متكررة مع المحيطين بك، وشعور بأن لا أحد يفهمك.</p>
+                    <p class="text-sm">صداعات بزاف مع الناس لي دايرين بيك، وكتحس بلي حتى حد ما كيفهمك.</p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">المشاكل الزوجية
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">مشاكل الزواج</h3>
+                    <p class="text-sm">غياب التفاهم، الغوات، الشك، أو التفكير فالطلاق.</p>
+                </article>
+                <article class="card">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">قلة الثقة فالنفس
                     </h3>
-                    <p class="text-sm">غياب التفاهم، كثرة الصراخ، الشك والغيرة، أو التفكير في الانفصال.</p>
+                    <p class="text-sm">كتحس براسك ناقص، كتخاف تهضر قدام الناس، وماكتقدرش تقول "لا".</p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">ضعف الثقة بالنفس
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">الاكتئاب والملل
                     </h3>
-                    <p class="text-sm">تشعر أنك لست جيداً بما يكفي، تخاف من التحدث أمام الجمهور، أو لا تستطيع قول "لا".
-                    </p>
+                    <p class="text-sm">مابقيتي باغي دير والو، حزين بلا سبب، وديما فاشل.</p>
                 </article>
                 <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">الضيق والاكتئاب
-                    </h3>
-                    <p class="text-sm">فقدان الرغبة في الحياة، حزن بدون سبب واضح، وشعور دائم بالتعب.</p>
-                </article>
-                <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">صدمات الحياة</h3>
-                    <p class="text-sm">الطلاق، فقدان شخص عزيز، أو صدمة تعرضت لها ولم تستطع تجاوزها.</p>
-                </article>
-                <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">الوسواس والقلق
-                    </h3>
-                    <p class="text-sm">أفكار ملققة تدور في رأسك ولا تتوقف، وخوف مفاجئ بدون سبب.</p>
-                </article>
-                <article class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">سرعة الغضب</h3>
-                    <p class="text-sm">تغضب لأتفه الأسباب، تفقد أعصابك بسرعة، ثم تندم بعد ذلك.</p>
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem;">مصاعب الغربة</h3>
+                    <p class="text-sm">الشعور بالوحدة، الحنين للبلاد، وصعوبة الاندماج فالمجتمع الجديد.</p>
                 </article>
             </div>
         </section>
 
-        <!-- Features (Avantages Arabic) -->
+        <!-- Features -->
         <section class="container" style="padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg);">
             <div class="text-center mb-lg">
-                <h2>لماذا تختار TherapieMarocOnline؟</h2>
-                <p>طريقة جديدة ومريحة للعلاج النفسي.</p>
+                <h2>علاش تختار TherapieMarocOnline؟</h2>
+                <p>مقاربة إنسانية وحديثة.</p>
             </div>
 
             <div class="grid grid-3">
                 <article class="card text-center">
                     <span class="card-icon">🌱</span>
                     <h3>استماع من القلب</h3>
-                    <p>نحن لا نكتفي بالاستماع فقط، بل نتحاور معك لنجد الحلول التي تريحك.</p>
+                    <p>كنسمعوك بتمعن وبلا حكم، باش نلقاو الحلول لي كتناسبك.</p>
                 </article>
                 <article class="card text-center">
                     <span class="card-icon">📅</span>
-                    <h3>سهولة وبساطة</h3>
-                    <p>احجز موعدك في دقيقتين عبر الموقع. بدون انتظار طويل في العيادة.</p>
+                    <h3>سهولة تامة</h3>
+                    <p>خود موعدك فـ 2 دقايق من التلفون. بلا ما تسنا فالعيادة.</p>
                 </article>
                 <article class="card text-center">
                     <span class="card-icon">🔒</span>
-                    <h3>سرية تامة</h3>
-                    <p>كل ما يدور بيننا يبقى سراً مقدساً. خصوصيتك هي أولويتنا.</p>
+                    <h3>سرية مضمونة</h3>
+                    <p>هضرتك كتبقى بيناتنا. احترام الخصوصية هو أهم حاجة عندنا.</p>
                 </article>
             </div>
         </section>
 
-        <!-- Expert Bio (E-E-A-T) -->
+        <!-- Expert Bio -->
         <section class="container" style="padding-bottom: var(--spacing-lg);">
             <div class="card"
                 style="display: flex; gap: 2rem; align-items: center; max-width: 900px; margin: 0 auto; text-align: right;">
@@ -227,12 +300,12 @@
                         style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--color-bg);">
                 </div>
                 <div>
-                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">من سيستقبلك؟</h2>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">شكون غادي يستقبلك؟</h2>
                     <h3 style="font-size: 1.25rem; color: var(--color-secondary); margin-bottom: 1rem;">محمد بوشمامة،
                         أخصائي نفسي إكلينيكي</h3>
-                    <p style="margin-bottom: 1rem;">ابن الدار البيضاء، متخصص في علم النفس الحديث والعلاج المعرفي السلوكي
-                        (TCC). هدفي هو مساعدتك على فهم نفسك، التغلب على مخاوفك، وبناء حياة مستقرة وسعيدة.</p>
-                    <a href="equipe.html" class="btn btn-outline">اكتشف مساري المهني</a>
+                    <p style="margin-bottom: 1rem;">أخصائي مغربي معتمد، متخصص فالعلاج المعرفي السلوكي (TCC). الهدف ديالي
+                        هو نعاونك تفهم راسك، تجاوز مخاوفك، وتعيش حياتك بسلام، فين ما كنتي فالعالم.</p>
+                    <a href="equipe.html" class="btn btn-outline">اكتشف المسار ديالي</a>
                 </div>
             </div>
         </section>
@@ -241,108 +314,100 @@
         <section style="background-color: var(--color-white); padding: var(--spacing-lg) 0;">
             <div class="container">
                 <div class="text-center mb-lg">
-                    <h2>كيف يمكننا مساعدتك</h2>
-                    <p>حلول متخصصة لكل فرد.</p>
+                    <h2>الخدمات ديالنا</h2>
+                    <p>حلول متخصصة لكل واحد فيكم.</p>
                 </div>
 
                 <div class="grid grid-3">
                     <a href="services/therapie-adulte.html" class="card">
                         <span class="card-icon">👤</span>
                         <h3>العلاج الفردي</h3>
-                        <p>لك أنت. لعلاج التوتر، القلق، الاكتئاب، أو لمجرد الفضفضة.</p>
-                        <strong style="color: var(--color-secondary);">اقرأ المزيد ←</strong>
+                        <p>للناس الكبار. علاج القلق، الاكتئاب، وتطوير الذات.</p>
+                        <strong style="color: var(--color-secondary);">اكتشف المزيد ←</strong>
                     </a>
                     <a href="services/therapie-couple.html" class="card">
                         <span class="card-icon">🤝</span>
                         <h3>علاج الأزواج</h3>
-                        <p>لحل الخلافات، استعادة الحوار، أو الانفصال بطريقة متحضرة.</p>
-                        <strong style="color: var(--color-secondary);">اقرأ المزيد ←</strong>
+                        <p>باش ترجعو التفاهم، ولا تفارقو بلا مشاكل.</p>
+                        <strong style="color: var(--color-secondary);">اكتشف المزيد ←</strong>
                     </a>
                     <a href="services/therapie-enfant-ado.html" class="card">
                         <span class="card-icon">🧸</span>
                         <h3>الأطفال والمراهقين</h3>
-                        <p>مشاكل الدراسة، العصبية الزائدة، أو الانعزال الاجتماعي.</p>
-                        <strong style="color: var(--color-secondary);">اقرأ المزيد ←</strong>
+                        <p>مشاكل القراية، العصبية، ولا الانعزال.</p>
+                        <strong style="color: var(--color-secondary);">اكتشف المزيد ←</strong>
                     </a>
-                    <a href="contact.html" class="card">
+                    <a href="services/expatries-mre.html" class="card">
                         <span class="card-icon">🌍</span>
                         <h3>مغاربة العالم</h3>
-                        <p>الغربة صعبة. نساعدك في إيجاد توازنك النفسي أينما كنت.</p>
-                        <strong style="color: var(--color-secondary);">احجز موعداً ←</strong>
+                        <p>الدعم النفسي المتخصص للمغتربين وتحديات العيش فالخارج.</p>
+                        <strong style="color: var(--color-secondary);">خود موعد ←</strong>
                     </a>
-                    <a href="contact.html" class="card">
+                    <a href="services/accompagnement-familial.html" class="card">
                         <span class="card-icon">👨‍👩‍👧‍👦</span>
                         <h3>الإرشاد الأسري</h3>
-                        <p>توتير في المنزل؟ نساعدكم لاستعادة الهدوء والتفاهم العائلي.</p>
+                        <p>كتير الصداع فالدار؟ نعاونكم ترجعو الهدوء للعائلة.</p>
                         <strong style="color: var(--color-secondary);">اتصل بنا ←</strong>
                     </a>
-                    <a href="contact.html" class="card">
+                    <a href="services/coaching-vie.html" class="card">
                         <span class="card-icon">🔄</span>
-                        <h3>الكوتشينغ والتوجيه</h3>
-                        <p>تشعر بالضياع؟ لا تعرف أي طريق تسلك؟ نساعدك لتتضح الرؤية.</p>
+                        <h3>الكوتشينغ (Coaching)</h3>
+                        <p>باغي تبدل حياتك، تاخد قرار مهم، ولا تحقق هدف.</p>
                         <strong style="color: var(--color-secondary);">اكتشف المزيد ←</strong>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: Processus (Réassurance) -->
+        <!-- Processus -->
         <section class="container" style="padding-bottom: var(--spacing-lg);">
             <div class="text-center mb-lg">
-                <h2>كيف تمر جلسة العلاج؟</h2>
-                <p>بكل سهولة، وأنت في منزلك.</p>
+                <h2>كيفاش كدوز الحصة أونلاين؟</h2>
+                <p>بسهولة، وأنت مرتاح فدارك.</p>
             </div>
             <div class="grid grid-3">
                 <div style="text-align: right;">
                     <div style="font-size: 3rem; font-weight: bold; color: #eee; line-height: 1;">01</div>
-                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">قبل الجلسة</h3>
-                    <p class="text-sm">تختار الوقت المناسب لك في الموقع. يصلك رابط آمن على واتساب. اجلس في مكان هادئ.
-                    </p>
+                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">قبل الحصة</h3>
+                    <p class="text-sm">كتختار الوقت فالموقع. كيصلك رابط واتساب ولا زووم. جلس فشي بلاصة هادية.</p>
                 </div>
                 <div style="text-align: right;">
                     <div style="font-size: 3rem; font-weight: bold; color: #eee; line-height: 1;">02</div>
-                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">أثناء الجلسة</h3>
-                    <p class="text-sm">45 دقيقة من الحديث والاستماع الفعال. تحدث براحتك، بالعربية، الفرنسية أو الدارجة.
-                    </p>
+                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">وقت الحصة</h3>
+                    <p class="text-sm">45 دقيقة ديال الهضرة والاستماع. هضر براحتك، بالدارجة ولا الفرنسية. كلشي كيبقى
+                        سري.</p>
                 </div>
                 <div style="text-align: right;">
                     <div style="font-size: 3rem; font-weight: bold; color: #eee; line-height: 1;">03</div>
-                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">بعد الجلسة</h3>
-                    <p class="text-sm">ستشعر بالراحة والوضوح. الدفع سهل وآمن: وفاكاش أو تحويل بنكي.</p>
+                    <h3 style="margin-top: -1rem; margin-bottom: 0.5rem;">من بعد</h3>
+                    <p class="text-sm">غتحس بالراحة والوضوح. الخلاص ساهل: فيرمو (virement) ولا وفاكاش.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3: Confiance & Éthique (Trust Block) -->
-        <section
-            style="background-color: #F9F7F2; padding: var(--spacing-lg) 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
-            <div class="container">
-                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-                    <div>
-                        <h2>الثقة هي الأساس.</h2>
-                        <p style="margin-bottom: 1.5rem;">نحن نلتزم بأعلى معايير الأخلاق المهنية.</p>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
-                                <span style="color: var(--color-secondary);">✔</span>
-                                <div><strong>السرية المهنية:</strong> ما يقال في الجلسة يبقى في الجلسة. لا نشارك
-                                    معلوماتك مع أحد.</div>
-                            </li>
-                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
-                                <span style="color: var(--color-secondary);">✔</span>
-                                <div><strong>كفاءة مثبتة:</strong> أخصائيون نفسيون معتمدون ولديهم ترخيص بمزاولة المهنة.
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div
-                        style="background: white; padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow);">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">ما لا نفعله</h3>
-                        <p class="text-sm" style="margin-bottom: 0.5rem;">❌ لا نصف الأدوية الطبية (هذا دور الطبيب النفسي
-                            Psychiatre).</p>
-                        <p class="text-sm" style="margin-bottom: 0.5rem;">❌ لا نحكم على تصرفاتك أو أفكارك أبداً.</p>
-                        <p class="text-sm">❌ لا نستقبل الحالات الطارئة جداً (يرجى الاتصال بالمستعجلات).</p>
-                    </div>
-                </div>
+        <!-- Social Proof (NEW) -->
+        <section class="container" style="padding: var(--spacing-lg) 0;">
+            <div class="text-center mb-lg">
+                <h2>آراء الناس لي دازو عندنا</h2>
+                <p>شهادات حقيقية (مع تغيير الأسماء).</p>
+            </div>
+            <div class="grid grid-3">
+                <article class="card" style="font-style: italic;">
+                    <p class="mb-lg">"كنت متردد ندير حصة أونلاين، ولكن الصراحة دازت مخيرة مع السي بوشمامة. إنسان كيسمع
+                        وفاهمني مزيان."</p>
+                    <strong style="display: block; font-style: normal;">— كريم، 34 سنة</strong>
+                    <span class="text-sm" style="opacity: 0.7; font-style: normal;">مقيم بفرنسا</span>
+                </article>
+                <article class="card" style="font-style: italic;">
+                    <p class="mb-lg">"شكراً بزاف على التعامل الراقي. عاونتيني نتجاوز مرحلة صعيبة فحياتي."</p>
+                    <strong style="display: block; font-style: normal;">— ليلى، 29 سنة</strong>
+                    <span class="text-sm" style="opacity: 0.7; font-style: normal;">الدار البيضاء</span>
+                </article>
+                <article class="card" style="font-style: italic;">
+                    <p class="mb-lg">"أخيراً لقيت معامن نهضر بلا ما نحس براسي محكور. الله يجازيك بخير."</p>
+                    <strong style="display: block; font-style: normal;">— مهدي، 41 سنة</strong>
+                    <span class="text-sm" style="opacity: 0.7; font-style: normal;">مقيم بكندا</span>
+                </article>
             </div>
         </section>
 
@@ -350,10 +415,10 @@
         <section
             style="background-color: var(--color-primary); color: white; padding: var(--spacing-lg) 0; text-align: center;">
             <div class="container">
-                <h2 style="color: inherit;">هل أنت مستعد لتحسين حياتك؟</h2>
-                <p style="margin-bottom: var(--spacing-md); opacity: 0.9;">الخطوة الأولى هي الأهم.</p>
-                <a href="rdv.html" class="btn btn-primary" style="background-color: var(--color-secondary);">احجز موعدك
-                    الآن</a>
+                <h2 style="color: inherit;">واش مستعد تبدل حياتك؟</h2>
+                <p style="margin-bottom: var(--spacing-md); opacity: 0.9;">أول خطوة هي الصعيبة. حنا معاك.</p>
+                <a href="rdv.html" class="btn btn-primary" style="background-color: var(--color-secondary);">خود موعد
+                    دابا</a>
             </div>
         </section>
     </main>
@@ -361,11 +426,30 @@
     <footer class="footer">
         <div class="container text-center">
             <p>&copy; 2025 TherapieMarocOnline. جميع الحقوق محفوظة.</p>
+            <p>استشارات نفسية 100% أونلاين.</p>
             <br>
-            <a href="index.html" style="color: white; text-decoration: underline;">Voir la version française</a>
+            <a href="index.html" style="color: rgba(255,255,255,0.7); text-decoration: underline;">Voir la version
+                française</a>
         </div>
     </footer>
 
+    <!-- Scroll Reveal Script -->
+    <script>
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.card, h2, .grid > div');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('reveal', 'active');
+                }
+            }
+        }
+        reveal();
+    </script>
+    <script src="/psymaroc/js/whatsapp-button.js"></script>
 </body>
 
 </html>
