@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychologue Marocain en Ligne - Thérapie TCC & Bien-être | TherapieMarocOnline</title>
+    <title>Thérapie en Ligne Maroc | Psychologue TCC | TherapieMarocOnline</title>
     <meta name="description"
-        content="Psychologue agréé proposant des thérapies en ligne (TCC) pour les Marocains. Gestion du stress, anxiété et dépression via consultation vidéo confidentielle.">
+        content="Thérapie en ligne Maroc : psychologue agréé proposant des consultations TCC pour les Marocains. Gestion du stress, anxiété et dépression via consultation vidéo confidentielle.">
+    <meta name="keywords"
+        content="thérapie en ligne maroc, psychologue en ligne maroc, consultation psychologique maroc, TCC maroc, thérapie comportementale maroc">
 
     <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -225,10 +227,26 @@
                     <li><a href="equipe.html">Équipe</a></li>
                     <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
+
+                    <!-- Mobile Only Items -->
+                    <li class="mobile-only-item show-on-mobile">
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="index.html" class="lang-link active" title="Français">
+                                <span style="font-size: 1.5rem;">🇫🇷</span>
+                            </a>
+                            <a href="index_ar.html" class="lang-link" title="العربية">
+                                <span style="font-size: 1.5rem;">🇲🇦</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="mobile-only-item show-on-mobile">
+                        <a href="rdv.html" class="btn btn-primary"
+                            style="width: 100%; text-align: center; justify-content: center;">Prendre RDV</a>
+                    </li>
                 </ul>
             </nav>
 
-            <div style="display: flex; gap: 0.75rem; align-items: center; margin-right: 1.5rem;">
+            <div class="desktop-only" style="display: flex; gap: 0.75rem; align-items: center; margin-right: 1.5rem;">
                 <!-- FR Flag -->
                 <a href="index.html" aria-label="Français" title="Français"
                     style="opacity: 1; transition: opacity 0.2s;">
@@ -253,17 +271,47 @@
                 </a>
             </div>
 
-            <a href="rdv.html" class="btn btn-primary nav-cta">Prendre RDV</a>
+            <a href="rdv.html" class="btn btn-primary nav-cta desktop-only">Prendre RDV</a>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <script>
         const burger = document.getElementById('burger');
         const nav = document.querySelector('.nav-links');
+        const overlay = document.getElementById('mobileOverlay');
+        const navLinks = document.querySelectorAll('.nav-links a');
 
-        burger.addEventListener('click', () => {
+        // Toggle menu
+        function toggleMenu() {
             nav.classList.toggle('nav-active');
             burger.classList.toggle('toggle');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('nav-active') ? 'hidden' : '';
+        }
+
+        // Open/close on burger click
+        burger.addEventListener('click', toggleMenu);
+
+        // Close on overlay click
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('nav-active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('nav-active')) {
+                toggleMenu();
+            }
         });
     </script>
 
@@ -353,17 +401,6 @@
                         émotionnelle</h3>
                     <p class="text-sm">Perte de motivation, tristesse inexpliquée, sentiment de vide ou d'épuisement.
                     </p>
-                </article>
-                <article class="card">
-                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Transitions de
-                        vie</h3>
-                    <p class="text-sm">Divorce, expatriation, changement de carrière, deuil ou arrivée d'un enfant.</p>
-                </article>
-                <article class="card">
-                    <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Blocages & Perte
-                        de sens</h3>
-                    <p class="text-sm">Impression de faire du surplace, questionnements existentiels, besoin de y voir
-                        plus clair.</p>
                 </article>
                 <article class="card">
                     <h3 class="gradient-title-bg" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Gestion des
@@ -561,12 +598,12 @@
                         style="border-top: 1px solid #eee; padding-top: 0.8rem; display: flex; align-items: center; justify-content: space-between;">
                         <div>
                             <strong style="display: block; font-size: 0.95rem;">Karim</strong>
-                            <span class="text-sm" style="display: block; opacity: 0.7; font-size: 0.8rem;">Thérapie
-                                individuelle</span>
+                            <span class="text-sm" style="display: block; opacity: 0.7; font-size: 0.8rem;">Motif :
+                                Anxiété</span>
                         </div>
                         <span
                             style="background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 600;">Patient
-                            Vérifié</span>
+                            suivi en 2024</span>
                     </div>
                 </article>
 
@@ -581,12 +618,12 @@
                         style="border-top: 1px solid #eee; padding-top: 0.8rem; display: flex; align-items: center; justify-content: space-between;">
                         <div>
                             <strong style="display: block; font-size: 0.95rem;">Layla</strong>
-                            <span class="text-sm" style="display: block; opacity: 0.7; font-size: 0.8rem;">Transition de
-                                vie</span>
+                            <span class="text-sm" style="display: block; opacity: 0.7; font-size: 0.8rem;">Motif :
+                                Transition</span>
                         </div>
                         <span
                             style="background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 600;">Patient
-                            Vérifié</span>
+                            suivi en 2024</span>
                     </div>
                 </article>
 
@@ -601,12 +638,12 @@
                         style="border-top: 1px solid #eee; padding-top: 0.8rem; display: flex; align-items: center; justify-content: space-between;">
                         <div>
                             <strong style="display: block; font-size: 0.95rem;">Mehdi</strong>
-                            <span class="text-sm" style="display: block; opacity: 0.7; font-size: 0.8rem;">Gestion du
-                                stress</span>
+                            <span class="text-sm" style="display: block; opacity: 0.7; font-size: 0.8rem;">Motif :
+                                Stress</span>
                         </div>
                         <span
                             style="background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 600;">Patient
-                            Vérifié</span>
+                            suivi en 2024</span>
                     </div>
                 </article>
             </div>
