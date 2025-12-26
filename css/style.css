@@ -32,7 +32,8 @@
 
     /* --- Styles --- */
     --radius: 8px;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Softer premium shadow */
     --container-width: 1200px;
 }
 
@@ -51,6 +52,13 @@ body {
     font-family: var(--font-sans);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    /* Prevent ghost space */
+    width: 100%;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 img {
@@ -270,7 +278,8 @@ h3 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1.25rem;
+        /* Reduced gap */
         /* Animation: Fade + Slide Up feel */
         transform: translateY(-20px);
         opacity: 0;
@@ -334,7 +343,8 @@ h3 {
     .nav-links a {
         display: inline-block;
         font-family: var(--font-serif);
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        /* Reduced font size */
         /* Larger font for accessibility */
         color: var(--color-text);
         font-weight: 600;
@@ -549,7 +559,7 @@ h3 {
 }
 
 .grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .card {
@@ -577,24 +587,122 @@ h3 {
     padding: var(--spacing-lg) 0 var(--spacing-md);
 }
 
-.footer a:hover {
-    text-decoration: underline;
+/* Mobile Media Query Enhancements */
+@media (max-width: 768px) {
+
+    /* Grid Safety for Mobile */
+    .grid-3,
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Premium Breathing Room */
+    section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* Reset Stats Card overlap */
+    .stats-card {
+        margin-top: 2rem !important;
+        /* No negative margin */
+        padding: 2rem !important;
+        box-shadow: var(--shadow) !important;
+    }
+
+
+    /* WhatsApp Gradient Button */
+    .btn-gradient-whatsapp {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white !important;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: none;
+    }
 }
 
-/* WhatsApp Gradient Button */
-.btn-gradient-whatsapp {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white !important;
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: none;
+/* Premium Arabic Typography */
+html[dir="rtl"] body,
+html[dir="rtl"] p,
+html[dir="rtl"] li {
+    line-height: 1.8;
 }
+
+/* Bio Card Layout (Replaces inline styles in index_ar.html) */
+.bio-card {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    /* Default LTR align is left, inherited */
+}
+
+html[dir="rtl"] .bio-card {
+    text-align: right;
+}
+
+/* --- FullCalendar Overrides (rdv.html) --- */
+#calendarSection h2 {
+    font-size: 1.75rem;
+    /* Smaller than default h2 */
+}
+
+/* Toolbar Title (Month/Year) */
+.fc .fc-toolbar-title {
+    font-size: 1.25rem !important;
+}
+
+/* List View Date Headers */
+.fc .fc-list-day-text,
+.fc .fc-list-day-side-text {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+}
+
+/* Event Title */
+.fc-list-event-title,
+.fc-event-title {
+    font-size: 0.95rem !important;
+}
+
+@media (max-width: 768px) {
+    #calendarSection h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .fc .fc-toolbar-title {
+        font-size: 1.1rem !important;
+    }
+
+    .fc .fc-button {
+        padding: 0.4em 0.65em !important;
+        font-size: 0.9em !important;
+    }
+
+    .fc .fc-list-day-text,
+    .fc .fc-list-day-side-text {
+        font-size: 0.9rem !important;
+    }
+
+    .bio-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bio-card img {
+        margin: 0 auto;
+    }
+}
+
+
 
 .btn-gradient-whatsapp:hover {
     transform: translateY(-2px);
@@ -678,6 +786,21 @@ h3 {
     align-items: center;
     background: white;
     text-decoration: none;
+}
+
+/* RTL Helpers (Arabic) */
+html[dir="rtl"] .burger-menu {
+    right: auto;
+    left: 1.5rem;
+}
+
+html[dir="rtl"] .mobile-lang-switcher {
+    margin-right: auto;
+    margin-left: 1rem;
+}
+
+html[dir="rtl"] .nav-links {
+    text-align: right;
 }
 
 @media (max-width: 768px) {
