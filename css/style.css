@@ -445,9 +445,7 @@ h3 {
         width: 100%;
     }
 
-    .hero-bg {
-        object-position: center 25%;
-    }
+    /* .hero-bg rule removed to allow inline styles to control object-position */
 
     /* Better Button Sizes */
     .btn {
@@ -525,6 +523,7 @@ h3 {
     z-index: 1;
     opacity: 0.4;
     /* Overlay effect handled by CSS opacity on image wrapper or pseudo-element */
+    /* object-position is handled via inline styles per page or defaults to center */
 }
 
 /* To simulate the gradient overlay */
