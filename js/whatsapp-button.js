@@ -1,6 +1,6 @@
 (function () {
     // WhatsApp Configuration
-    const phoneNumber = "212663056341";
+    const phoneNumber = "212753235215";
     const message = "Bonjour, je souhaite prendre rendez-vous.";
 
     // 1. Inject Floating Button (Desktop)

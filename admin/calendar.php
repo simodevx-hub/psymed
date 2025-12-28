@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
     <style>
+
         body { margin: 0; padding: 0; display: flex; height: 100vh; overflow: hidden; font-family: 'DM Sans', sans-serif; }
         
         /* Sidebar */
@@ -55,6 +56,18 @@
         .fc-event:hover .fc-event-main { background: #2e7d32; }
         
         .fc-timegrid-slot { height: 40px !important; } /* Taller slots */
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body { flex-direction: column; height: auto; overflow-y: auto; }
+            #sidebar { width: 100%; height: auto; box-sizing: border-box; border-right: none; border-bottom: 1px solid #ddd; padding: 1rem; }
+            #main { height: 80vh; padding: 0.5rem; }
+            #calendar { min-height: 500px; }
+            
+            /* Responsive Toolbar */
+            .fc-header-toolbar { flex-direction: column; gap: 0.5rem; }
+            .fc-toolbar-chunk { display: flex; justify-content: center; flex-wrap: wrap; width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -92,13 +105,15 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
+            var isMobile = window.innerWidth < 768;
+
             calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'timeGridWeek',
+                initialView: isMobile ? 'timeGridDay' : 'timeGridWeek',
                 locale: 'fr',
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'timeGridWeek,dayGridMonth'
+                    right: isMobile ? 'timeGridDay,listWeek' : 'timeGridWeek,dayGridMonth'
                 },
                 slotMinTime: '08:00:00',
                 slotMaxTime: '20:00:00',
@@ -107,6 +122,7 @@
                 selectable: true,
                 selectMirror: true,
                 nowIndicator: true,
+                longPressDelay: 100, // Faster selection on mobile
                 
                 // Load events
                 events: '../api/slots.php',
@@ -141,7 +157,15 @@
 
         // --- API Helpers ---
         // Simple security for this phase: Prompt on load
-        const API_KEY = prompt("Veuillez entrer la clé de sécurité Admin (ex: PsyMed...):", "PsyMed_Secr3t_K3y_2025");
+        // --- API Helpers ---
+        let API_KEY = localStorage.getItem('admin_api_key');
+        
+        if (!API_KEY) {
+            API_KEY = prompt("Veuillez entrer le mot de passe Admin :", "1985");
+            if(API_KEY) {
+                localStorage.setItem('admin_api_key', API_KEY);
+            }
+        }
 
         async function addSlot(start, end) {
             try {
@@ -155,7 +179,14 @@
                 });
                 if(!res.ok) throw new Error("Auth failed");
                 calendar.refetchEvents();
-            } catch(e) { console.error(e); alert('Erreur ajout'); }
+            } catch(e) { 
+                console.error(e); 
+                alert('Erreur ajout: ' + e.message);
+                if(e.message === 'Auth failed') {
+                    localStorage.removeItem('admin_api_key');
+                    location.reload();
+                }
+            }
         }
 
         async function deleteSlot(id) {

@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilans Psychologiques - TherapieMarocOnline</title>
+    <title>Bilans Psychologiques (QI, TDAH, Personnalité) - Maroc | TherapieMaroc.online</title>
+    <meta name="description"
+        content="Réalisez un bilan psychologique complet à Casablanca. Tests de QI (WISC/WAIS), diagnostic TDAH et bilan de personnalité. Évaluation neuropsychologique expert.">
+    <meta name="keywords"
+        content="bilan psychologique casablanca, test QI maroc, test TDAH adulte maroc, bilan neuropsychologique, WISC V, WAIS IV">
 
     <!-- CSS & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +17,27 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalSpecialty",
+      "name": "Bilans Psychologiques",
+      "provider": {
+        "@type": "MedicalBusiness",
+        "name": "TherapieMaroc.online",
+        "email": "contact@therapiemaroc.online",
+        "url": "https://therapiemaroc.online"
+      },
+      "medicalSpecialty": ["Psychology", "Neuropsychology"],
+      "availableService": [
+        { "@type": "MedicalTest", "name": "Test de QI (WISC-V / WAIS-IV)" },
+        { "@type": "MedicalTest", "name": "Bilan TDAH" },
+        { "@type": "MedicalTest", "name": "Bilan de Personnalité" }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -21,7 +46,7 @@
     <header class="navbar">
         <div class="container navbar-content">
             <a href="../index.html" class="logo">
-                <img src="../img/logo.png" alt="TherapieMarocOnline" style="vertical-align: middle;">
+                <img src="../img/logo.png" alt="TherapieMaroc.online" style="vertical-align: middle;">
             </a>
 
             <div class="burger-menu" id="burger">
@@ -34,7 +59,7 @@
                 <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
                     <li><a href="index.html" class="active">Services</a></li>
-                    <li><a href="../equipe.html">�quipe</a></li>
+                    <li><a href="../equipe.html">Équipe</a></li>
                     <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
@@ -55,33 +80,94 @@
     </script>
 
     <main>
+        <!-- Hero Section with Gradient (replacing missing image) -->
+        <section class="hero"
+            style="min-height: 50vh; background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-text);">
+            <div class="container hero-content">
+                <h1 style="color: #2c3e50;">Bilans Psychologiques & Neuropsychologiques</h1>
+                <p style="color: #34495e;">Une évaluation complète pour comprendre vos forces, diagnostiquer un trouble
+                    (TDAH, HPI) et orienter la prise en charge.</p>
+                <a href="../rdv.html" class="btn btn-primary">Demander un diagnostic</a>
+            </div>
+        </section>
+
         <section class="container" style="padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg);">
             <div style="max-width: 800px; margin: 0 auto;">
 
-                <div class="text-center mb-lg">
-                    <h1>Bilans Psychologiques</h1>
-                    <p class="subtitle">Mieux comprendre le fonctionnement cognitif et �motionnel.</p>
-                </div>
-
+                <!-- Intro -->
                 <div class="mb-lg">
-                    <p>Le bilan psychologique est un outil d'�valuation complet qui permet de mieux comprendre le
-                        fonctionnement d'une personne, ses forces et ses fragilit�s. Il se d�roule g�n�ralement en
-                        plusieurs s�ances (entretien, passation de tests, restitution).</p>
-                </div>
-
-                <div class="card">
-                    <h3>Types de bilans propos�s :</h3>
+                    <h2>Pourquoi réaliser un bilan ?</h2>
+                    <p>Le bilan psychologique est bien plus qu'une simple série de tests. C'est une <strong>photographie
+                            instantanée</strong> du fonctionnement cognitif et émotionnel d'une personne à un moment
+                        donné.</p>
+                    <p style="margin-top: 1rem;">Il permet de :</p>
                     <ul style="margin-top: 1rem; padding-left: 1.5rem; line-height: 1.8;">
-                        <li><strong>Bilan Cognitif (QI) :</strong> Test WISC-V (enfants) et WAIS-IV (adultes).</li>
-                        <li><strong>Bilan de Personnalit� :</strong> Tests projectifs (Rorschach, TAT).</li>
-                        <li><strong>Bilan Neuropsychologique :</strong> Attention (TDAH), m�moire, fonctions ex�cutives.
+                        <li><strong>Diagnostiquer :</strong> Identifier un TDAH, un Haut Potentiel Intellectuel (HPI) ou
+                            des troubles de l'apprentissage (DYS).</li>
+                        <li><strong>Comprendre :</strong> Éclairer des difficultés scolaires ou professionnelles
+                            inexpliquées.</li>
+                        <li><strong>Orienter :</strong> Proposer des aménagements scolaires ou une thérapie adaptée.
                         </li>
-                        <li><strong>Bilan d'Orientation :</strong> Pour les adolescents et �tudiants.</li>
                     </ul>
                 </div>
 
-                <div class="text-center" style="margin-top: 3rem;">
-                    <a href="../rdv.html" class="btn btn-primary">Prendre Rendez-vous</a>
+                <!-- Types of Bilans -->
+                <div class="grid grid-2" style="gap: 2rem;">
+                    <div class="card" style="border-top: 4px solid var(--color-primary);">
+                        <h3>🧠 Bilan Cognitif (QI)</h3>
+                        <p class="text-sm">Évaluation de l'efficience intellectuelle via les échelles de référence :</p>
+                        <ul class="text-sm" style="margin-top: 0.5rem; padding-left: 1rem;">
+                            <li><strong>WISC-V</strong> (Enfants 6-16 ans)</li>
+                            <li><strong>WAIS-IV</strong> (Adultes 16-79 ans)</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--color-secondary);">
+                        <h3>🎯 Bilan Neuropsychologique</h3>
+                        <p class="text-sm">Exploration fine des fonctions cognitives spécifiques :</p>
+                        <ul class="text-sm" style="margin-top: 0.5rem; padding-left: 1rem;">
+                            <li>Attention & Concentration (TDA/H)</li>
+                            <li>Mémoire de travail & auditive</li>
+                            <li>Fonctions exécutives (Planification, inhibition)</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="border-top: 4px solid #f39c12;">
+                        <h3>🎭 Bilan de Personnalité</h3>
+                        <p class="text-sm">Comprendre la dynamique affective et les angoisses sous-jacentes.</p>
+                        <ul class="text-sm" style="margin-top: 0.5rem; padding-left: 1rem;">
+                            <li>Tests Projectifs (Rorschach, TAT)</li>
+                            <li>Questionnaires de personnalité</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="border-top: 4px solid #9b59b6;">
+                        <h3>🎓 Bilan d'Orientation</h3>
+                        <p class="text-sm">Pour les adolescents et étudiants en questionnement.</p>
+                        <p class="text-sm">Identification des intérêts professionnels, des aptitudes et de la
+                            motivation.</p>
+                    </div>
+                </div>
+
+                <!-- Process -->
+                <div class="mb-lg" style="margin-top: 3rem;">
+                    <h2>Déroulement du Bilan</h2>
+                    <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: var(--radius);">
+                        <ol style="padding-left: 1.5rem; line-height: 2;">
+                            <li><strong>L'entretien préliminaire (Anamnèse) :</strong> Nous retraçons ensemble
+                                l'histoire du patient et définissons la demande.</li>
+                            <li><strong>La passation des tests :</strong> Une ou plusieurs séances (2h à 4h au total)
+                                pour effectuer les épreuves standardisées.</li>
+                            <li><strong>La cotation et l'analyse :</strong> Le psychologue analyse les résultats et
+                                rédige un compte-rendu détaillé.</li>
+                            <li><strong>La restitution :</strong> Séance de remise du compte-rendu écrit et explication
+                                orale des résultats.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center card" style="background-color: #e3f2fd; border: none;">
+                    <h3>Besoin de clarté ?</h3>
+                    <p class="mb-lg">Un bilan est le point de départ vers des solutions concrètes.</p>
+                    <a href="../rdv.html" class="btn btn-primary">Prendre RDV pour un Bilan</a>
                 </div>
 
             </div>
@@ -90,7 +176,7 @@
 
     <footer class="footer">
         <div class="container text-center">
-            <p>&copy; 2025 TherapieMarocOnline. Tous droits r�serv�s.</p>
+            <p>&copy; 2025 TherapieMaroc.online. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -98,4 +184,3 @@
 </body>
 
 </html>
-
