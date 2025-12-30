@@ -1,9 +1,0 @@
-SUCCESS: Build Complete with Real Credentials
-
-The application has been rebuilt with your Supabase URL and Key.
-
-1.  Delete the contents of your server's `/admin/` folder.
-2.  Upload the NEW contents of `c:\xampp\htdocs\psymaroc\frontend\dist` to `/admin/`.
-3.  Refresh your browser.
-
-The app is now fully configured and should connect to your database without errors.
