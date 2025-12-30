@@ -1,0 +1,11 @@
+VISUAL CALENDAR UPDATE READY
+
+I have upgraded the Admin Dashboard to a full Weekly Calendar View.
+- Click any cell to Add a Slot.
+- See slots visually placed at their time.
+- Click a slot to Delete it.
+
+INSTRUCTIONS:
+1. Delete /admin/ content on server.
+2. Upload new `dist` content.
+3. Refresh /admin/.

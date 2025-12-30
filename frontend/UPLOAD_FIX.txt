@@ -1,0 +1,5 @@
+Please re-upload the contents of the 'dist' folder to your server to fix the 404 errors.
+The new build uses relative paths and HashRouter to work in the /admin/ subdirectory.
+1. Delete old files in /admin/
+2. Upload new files from dist/
+3. refreshing pages will now work.

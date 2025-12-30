@@ -1,0 +1,5 @@
+{
+  "name": "TherapieMaroc",
+  "description": "A human-first psychological appointment booking system designed for Morocco and international patients, featuring timezone conversion and WhatsApp integration.",
+  "requestFramePermissions": []
+}

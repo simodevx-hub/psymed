@@ -20,6 +20,10 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
+
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <!-- FullCalendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
 
@@ -72,18 +76,54 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 999;
             justify-content: center;
             align-items: center;
+            padding: 1rem;
+            overflow-y: auto;
         }
 
         .modal-content {
             background: white;
             padding: 2rem;
-            border-radius: 8px;
-            max-width: 400px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
             text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        /* Mobile responsive for modal */
+        @media (max-width: 768px) {
+            .modal {
+                align-items: flex-start;
+                padding: 0.5rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                border-radius: 8px;
+                max-height: 95vh;
+                margin-top: 1rem;
+            }
+
+            .modal-content h3 {
+                font-size: 1.3rem !important;
+            }
+
+            .modal-content input,
+            .modal-content select {
+                font-size: 16px !important;
+                /* Prevent zoom on iOS */
+            }
+
+            /* Make pricing grid responsive - single column on mobile */
+            div[style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         /* Premium Calendar Styles */
@@ -241,17 +281,27 @@
                 <h1 class="mb-lg">Commencez votre accompagnement</h1>
 
                 <!-- Pricing Grid -->
-                <div class="grid grid-3" style="margin-bottom: 3rem; text-align: left;">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
                     <div class="card" style="border-top: 4px solid var(--color-secondary);">
                         <h3>Séance Individuelle</h3>
                         <p class="text-sm" style="color: #666; margin-bottom: 1rem;">Pour consulter ponctuellement.</p>
                         <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">250 DH <small
                                 style="font-size: 1rem; font-weight: normal;">/ séance</small></div>
-                        <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                        <ul style="list-style: none; padding: 0; font-size: 0.9rem; margin-bottom: 1.5rem;">
                             <li>✔ 45 - 60 min</li>
                             <li>✔ Visio sécurisée</li>
                             <li>✔ Paiement à la séance</li>
                         </ul>
+                        <a href="https://wa.me/212753235215?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20S%C3%A9ance%20Individuelle%20(250%20DH)."
+                            target="_blank" class="btn btn-gradient-whatsapp"
+                            style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
+                            <svg style="width: 18px; height: 18px; fill: white; margin-right: 8px;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                            </svg>
+                            Réserver maintenant
+                        </a>
                     </div>
 
                     <div class="card" style="border-top: 4px solid var(--color-primary); background: #fff;">
@@ -261,11 +311,43 @@
                         <p class="text-sm" style="color: #666; margin-bottom: 1rem;">2 Séances d'accompagnement.</p>
                         <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">450 DH <small
                                 style="font-size: 1rem; font-weight: normal;">/ le pack</small></div>
-                        <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                        <ul style="list-style: none; padding: 0; font-size: 0.9rem; margin-bottom: 1.5rem;">
                             <li>✔ Soit 225 DH / séance</li>
                             <li>✔ Idéal pour commencer</li>
                             <li>✔ Valable 1 mois</li>
                         </ul>
+                        <a href="https://wa.me/212753235215?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20Pack%20Duo%20-%202%20s%C3%A9ances%20(450%20DH)."
+                            target="_blank" class="btn btn-gradient-whatsapp"
+                            style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
+                            <svg style="width: 18px; height: 18px; fill: white; margin-right: 8px;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                            </svg>
+                            Réserver maintenant
+                        </a>
+                    </div>
+
+                    <div class="card" style="border-top: 4px solid #4CAF50;">
+                        <h3>Pack 3 Séances</h3>
+                        <p class="text-sm" style="color: #666; margin-bottom: 1rem;">3 Séances pour progresser.</p>
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">650 DH <small
+                                style="font-size: 1rem; font-weight: normal;">/ le pack</small></div>
+                        <ul style="list-style: none; padding: 0; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                            <li>✔ Soit 217 DH / séance</li>
+                            <li>✔ Meilleur rapport qualité-prix</li>
+                            <li>✔ Valable 6 semaines</li>
+                        </ul>
+                        <a href="https://wa.me/212753235215?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20Pack%203%20S%C3%A9ances%20(650%20DH)."
+                            target="_blank" class="btn btn-gradient-whatsapp"
+                            style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
+                            <svg style="width: 18px; height: 18px; fill: white; margin-right: 8px;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                            </svg>
+                            Réserver maintenant
+                        </a>
                     </div>
 
                     <div class="card" style="border-top: 4px solid #333;">
@@ -273,27 +355,38 @@
                         <p class="text-sm" style="color: #666; margin-bottom: 1rem;">4 Séances pour avancer.</p>
                         <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">800 DH <small
                                 style="font-size: 1rem; font-weight: normal;">/ le pack</small></div>
-                        <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                        <ul style="list-style: none; padding: 0; font-size: 0.9rem; margin-bottom: 1.5rem;">
                             <li>✔ Soit 200 DH / séance</li>
                             <li>✔ Engagement sur la durée</li>
                             <li>✔ Valable 2 mois</li>
                         </ul>
+                        <a href="https://wa.me/212753235215?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20Pack%20Suivi%20-%204%20s%C3%A9ances%20(800%20DH)."
+                            target="_blank" class="btn btn-gradient-whatsapp"
+                            style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
+                            <svg style="width: 18px; height: 18px; fill: white; margin-right: 8px;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                            </svg>
+                            Réserver maintenant
+                        </a>
                     </div>
                 </div>
 
                 <!-- WhatsApp Pre-Calendar CTA -->
                 <div class="text-center mb-lg"
-                    style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; border: 1px solid #c8e6c9; max-width: 600px; margin: 0 auto 2rem auto;">
-                    <p style="color: #2e7d32; font-weight: 500; margin-bottom: 0.5rem;">Besoin d'aide ou d'une info
-                        avant de réserver ?</p>
-                    <a href="https://wa.me/212753235215?text=Bonjour,%20je%20voudrais%20savoir%20comment%20on%20proc%C3%A8de."
-                        target="_blank" class="btn btn-gradient-whatsapp" style="font-size: 0.95rem;">
-                        <svg style="width: 18px; height: 18px; fill: white; margin-right: 8px;"
+                    style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); padding: 2rem; border-radius: 12px; border: 2px solid #25D366; max-width: 600px; margin: 0 auto 2rem auto; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.15);">
+                    <p style="color: #2e7d32; font-weight: 600; margin-bottom: 1rem; font-size: 1.05rem;">💬 Besoin
+                        d'aide ou d'une info avant de réserver ?</p>
+                    <a href="https://wa.me/212753235215?text=Bonjour%2C%20je%20voudrais%20savoir%20comment%20on%20proc%C3%A8de."
+                        target="_blank" class="btn btn-gradient-whatsapp"
+                        style="font-size: 1rem; padding: 0.85rem 1.5rem; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); transition: all 0.3s ease;">
+                        <svg style="width: 20px; height: 20px; fill: white; margin-right: 10px;"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path
                                 d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
                         </svg>
-                        Discussion instantanée WhatsApp
+                        Discussion instantanée
                     </a>
                 </div>
                 <button id="showCalendarBtn" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
@@ -317,28 +410,125 @@
 
         <!-- Booking Modal (Hidden by default) -->
         <div id="bookingModal" class="modal">
-            <div class="modal-content">
+            <div class="modal-content" style="max-width: 500px;">
                 <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Confirmer la réservation</h3>
-                <p id="modalDate" style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;"></p>
+                <p id="modalDate" style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem; color: #333;"></p>
                 <p style="color: #666; margin-bottom: 1.5rem;">Consultation Vidéo</p>
 
-                <div
-                    style="background: #fff3e0; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left; font-size: 0.9rem;">
-                    <strong>⚠️ Important :</strong><br>
-                    Pour bloquer ce créneau, un acompte est requis via Wafacash ou Virement.
-                </div>
+                <!-- Booking Form -->
+                <form id="bookingForm" style="text-align: left;">
+                    <!-- Name -->
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">Nom complet
+                            *</label>
+                        <input type="text" id="patientName" required
+                            style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem;"
+                            placeholder="Votre nom et prénom">
+                    </div>
 
-                <button id="confirmWaBtn" class="btn btn-gradient-whatsapp"
-                    style="width: 100%; justify-content: center;">
-                    <svg style="width: 20px; height: 20px; fill: white; margin-right: 8px;"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path
-                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
-                    </svg>
-                    Valider sur WhatsApp
-                </button>
+                    <!-- Age -->
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">Âge
+                            *</label>
+                        <input type="number" id="patientAge" required min="1" max="120"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem;"
+                            placeholder="Votre âge">
+                    </div>
+
+                    <!-- Language Preference -->
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">Langue de
+                            consultation *</label>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="radio" name="language" value="Français" required
+                                    style="margin-right: 0.5rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem;">Français</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="radio" name="language" value="العربية"
+                                    style="margin-right: 0.5rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem;">العربية</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="radio" name="language" value="English"
+                                    style="margin-right: 0.5rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem;">English</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Consultation Reason -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">Motif de
+                            consultation *</label>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.75rem;">Sélectionnez au moins un
+                            motif</p>
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                            <label
+                                style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border-radius: 6px; transition: background 0.2s;"
+                                onmouseover="this.style.background='#f5f5f5'"
+                                onmouseout="this.style.background='transparent'">
+                                <input type="checkbox" name="reason" value="Problème psychologique"
+                                    style="margin-right: 0.75rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem;">Problème psychologique</span>
+                            </label>
+                            <label
+                                style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border-radius: 6px; transition: background 0.2s;"
+                                onmouseover="this.style.background='#f5f5f5'"
+                                onmouseout="this.style.background='transparent'">
+                                <input type="checkbox" name="reason" value="Problème familial"
+                                    style="margin-right: 0.75rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem;">Problème familial</span>
+                            </label>
+                            <label
+                                style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border-radius: 6px; transition: background 0.2s;"
+                                onmouseover="this.style.background='#f5f5f5'"
+                                onmouseout="this.style.background='transparent'">
+                                <input type="checkbox" name="reason" value="Problème relationnel"
+                                    style="margin-right: 0.75rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem;">Problème relationnel</span>
+                            </label>
+                            <label
+                                style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border-radius: 6px; transition: background 0.2s;"
+                                onmouseover="this.style.background='#f5f5f5'"
+                                onmouseout="this.style.background='transparent'">
+                                <input type="checkbox" name="reason" value="Problème professionnel"
+                                    style="margin-right: 0.75rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem;">Problème professionnel</span>
+                            </label>
+                            <label
+                                style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border-radius: 6px; transition: background 0.2s;"
+                                onmouseover="this.style.background='#f5f5f5'"
+                                onmouseout="this.style.background='transparent'">
+                                <input type="checkbox" name="reason" value="Stress"
+                                    style="margin-right: 0.75rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem;">Stress</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Important Note -->
+                    <div
+                        style="background: #fff3e0; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                        <strong>⚠️ Important :</strong><br>
+                        Pour bloquer ce créneau, un acompte est requis via Wafacash ou Virement.
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="confirmWaBtn" class="btn btn-gradient-whatsapp"
+                        style="width: 100%; justify-content: center;">
+                        <svg style="width: 20px; height: 20px; fill: white; margin-right: 8px;"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                        </svg>
+                        Réserver via WhatsApp
+                    </button>
+                </form>
+
                 <button id="closeModalBtn"
-                    style="margin-top: 1rem; background: none; border: none; text-decoration: underline; cursor: pointer; color: #666;">Annuler</button>
+                    style="margin-top: 1rem; background: none; border: none; text-decoration: underline; cursor: pointer; color: #666; width: 100%;">Annuler</button>
             </div>
         </div>
     </main>
@@ -360,6 +550,13 @@
                 btn.style.display = 'none'; // Hide button after click
 
                 if (!calendarInitialized) {
+                    // Initialize Supabase Client
+                    const { createClient } = supabase;
+                    const supabaseClient = createClient(
+                        'https://mrchjxvutegjjlmgkxuv.supabase.co',
+                        'sb_publishable_UwdDdbbZ_dFhGlvidctauA_mP5QZ9hX'
+                    );
+
                     var calendar = new FullCalendar.Calendar(calendarEl, {
                         initialView: 'listWeek',
                         locale: 'fr',
@@ -378,23 +575,91 @@
                             };
                         },
                         noEventsContent: 'Aucun créneau disponible cette semaine.',
-                        events: 'api/slots.php',
+
+                        // Fetch events from Supabase
+                        events: async function (fetchInfo, successCallback, failureCallback) {
+                            try {
+                                const { data, error } = await supabaseClient
+                                    .from('slots')
+                                    .select('*')
+                                    .eq('status', 'open')
+                                    .gte('start_time', new Date().toISOString())
+                                    .order('start_time', { ascending: true });
+
+                                if (error) {
+                                    console.error('Supabase error:', error);
+                                    throw error;
+                                }
+
+                                // Transform to FullCalendar format
+                                const events = (data || []).map(slot => ({
+                                    id: slot.id,
+                                    title: 'Disponible',
+                                    start: slot.start_time,
+                                    end: slot.end_time
+                                }));
+
+                                successCallback(events);
+                            } catch (error) {
+                                console.error('Error fetching slots:', error);
+                                failureCallback(error);
+                            }
+                        },
+
                         eventClick: function (info) {
                             let date = info.event.start;
                             let dateStr = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+                            let slotId = info.event.id || 'N/A';
 
                             // Populate Modal
                             document.getElementById('modalDate').textContent = dateStr;
+
+                            // Reset form
+                            document.getElementById('bookingForm').reset();
 
                             // Show Modal
                             const modal = document.getElementById('bookingModal');
                             modal.style.display = 'flex';
 
-                            // Confirm Action
-                            document.getElementById('confirmWaBtn').onclick = function () {
-                                // Include Slot ID for manual tracking
-                                let slotId = info.event.id || 'N/A';
-                                let message = "Bonjour, je souhaite réserver le créneau du " + dateStr + " (Ref: " + slotId + ").";
+                            // Handle form submission
+                            document.getElementById('bookingForm').onsubmit = function (e) {
+                                e.preventDefault();
+
+                                // Collect form data
+                                const name = document.getElementById('patientName').value.trim();
+                                const age = document.getElementById('patientAge').value;
+
+                                // Get language preference
+                                const languageRadio = document.querySelector('input[name="language"]:checked');
+                                const language = languageRadio ? languageRadio.value : '';
+
+                                // Get selected reasons
+                                const reasonCheckboxes = document.querySelectorAll('input[name="reason"]:checked');
+                                const reasons = Array.from(reasonCheckboxes).map(cb => cb.value);
+
+                                // Validation
+                                if (!name || !age || !language) {
+                                    alert('Veuillez remplir tous les champs obligatoires.');
+                                    return;
+                                }
+
+                                if (reasons.length === 0) {
+                                    alert('Veuillez sélectionner au moins un motif de consultation.');
+                                    return;
+                                }
+
+                                // Build WhatsApp message
+                                let message = `Bonjour, je souhaite réserver une consultation.\n\n`;
+                                message += `📅 *Créneau souhaité:* ${dateStr}\n\n`;
+                                message += `👤 *Nom:* ${name}\n`;
+                                message += `🎂 *Âge:* ${age} ans\n`;
+                                message += `🌐 *Langue:* ${language}\n\n`;
+                                message += `📋 *Motif(s) de consultation:*\n`;
+                                reasons.forEach(reason => {
+                                    message += `  • ${reason}\n`;
+                                });
+
+                                // Open WhatsApp
                                 let waLink = "https://wa.me/212753235215?text=" + encodeURIComponent(message);
                                 window.open(waLink, '_blank');
                                 modal.style.display = 'none';
